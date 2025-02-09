@@ -2,7 +2,7 @@
 title: Datasheets
 ---
 
-![](MFG_Attachment-2-ESP32-S3-WROOM-1.jpg)
+<img src="MFG_Attachment-2-ESP32-S3-WROOM-1.jpg" width="150">
 
 | **ESP32-S3-WROOM-1-N4**          | **Link**   |
 |----------------------------------|------------|
@@ -12,7 +12,7 @@ title: Datasheets
 | ESP32 S3 Technical Reference Manual URL       | [Datasheet](https://www.espressif.com/sites/default/files/documentation/esp32-s3_technical_reference_manual_en.pdf)  | Has details on I/O multiplexing, USB, and others |
 
 
-![](296~4200577-3~KTT~3.jpg)
+<img src="296~4200577-3~KTT~3.jpg" width="150">
 
 | **LM1086ISX-3.3/NOPB**          | **Link**   |
 |---------------------------------|------------|
