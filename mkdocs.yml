@@ -6,15 +6,14 @@ theme:
   name: material
   custom_dir: custom_theme/
   palette:
-    - scheme: default  # Light mode
-      primary: blue-gray
-      accent: amber
+    - primary: maroon
+      accent: gold
       toggle:
         icon: material/weather-night
         name: Switch to dark mode
     - scheme: slate  # Dark mode
-      primary: blue-gray
-      accent: cyan
+      primary: black
+      accent: blue
       toggle:
         icon: material/weather-sunny
         name: Switch to light mode
