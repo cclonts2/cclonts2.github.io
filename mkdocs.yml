@@ -6,6 +6,7 @@ theme:
   name: material
   custom_dir: custom_theme/
   palette:
+    scheme: slate
     primary: #183a1d
     accent: #e1eedd
   font:
