@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://embedded-systems-design.github.io/template_report/</loc>
+         <loc>https://cclonts2.github.io/</loc>
          <lastmod>2025-02-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://embedded-systems-design.github.io/template_report/Datasheets/</loc>
+         <loc>https://cclonts2.github.io/Datasheets/</loc>
          <lastmod>2025-02-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://embedded-systems-design.github.io/template_report/ESP32-Table/</loc>
+         <loc>https://cclonts2.github.io/ESP32-Table/</loc>
          <lastmod>2025-02-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://embedded-systems-design.github.io/template_report/charts/</loc>
+         <loc>https://cclonts2.github.io/charts/</loc>
          <lastmod>2025-02-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://embedded-systems-design.github.io/template_report/component-selection/</loc>
+         <loc>https://cclonts2.github.io/component-selection/</loc>
          <lastmod>2025-02-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://embedded-systems-design.github.io/template_report/static/node_modules/mathjax/</loc>
+         <loc>https://cclonts2.github.io/static/node_modules/mathjax/</loc>
          <lastmod>2025-02-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
