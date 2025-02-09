@@ -92,6 +92,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#esp32-table" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -630,6 +635,21 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#esp32-table" class="md-nav__link">
+    ESP32 Table
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -653,7 +673,141 @@
 
   <h1>Index</h1>
 
-
+<hr />
+<h2 id="esp32-table">ESP32 Table</h2>
+<table>
+<thead>
+<tr>
+<th>ESP Info</th>
+<th>Answer</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Model</td>
+<td>ESP32-S3-WROOM-1</td>
+<td></td>
+</tr>
+<tr>
+<td>Product Page URL</td>
+<td><a href="https://www.espressif.com/en/products/modules">espressif</a></td>
+<td>Found on Espressif.com</td>
+</tr>
+<tr>
+<td>ESP32-S3-WROOM-1-N4 Datasheet URL</td>
+<td><a href="https://www.espressif.com/sites/default/files/documentation/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf">Datasheet</a></td>
+<td></td>
+</tr>
+<tr>
+<td>ESP32 S3 Datasheet URL</td>
+<td><a href="https://www.espressif.com/sites/default/files/documentation/esp32-s3_datasheet_en.pdf">Datasheet</a></td>
+<td>Has more detail on functions</td>
+</tr>
+<tr>
+<td>ESP32 S3 Technical Reference Manual URL</td>
+<td><a href="https://www.espressif.com/sites/default/files/documentation/esp32-s3_technical_reference_manual_en.pdf">Datasheet</a></td>
+<td>Has details on I/O multiplexing, USB, and others</td>
+</tr>
+<tr>
+<td>Vendor link</td>
+<td><a href="https://www.digikey.com/en/products/detail/espressif-systems/ESP32-S3-WROOM-1-N4/16162639?s=N4IgjCBcpgbFoDGUBmBDANgZwKYBoQB7KAbRACY4BWWAFhAF0CAHAFyhAGVWAnASwB2AcxABfAlXrQQySOmz4ipELADsVVQE4AHIxbtIXXoJHiVmhDNSZcBYpDK0ADJoDMbvSDYdu-YWIIwd0tZeVslB3ByTU1yck9vQ18TAPBaeOlQm0V7MlVyV21XeiYvAyM-UwJyKgykawU7ZUpyWEoE8uT-M3JVeEyG8NyKJ3JtdtLEipSzVyd%2B%2Brlspsig7U0NDp9jboJaWl0BpcaIsjAnJ1c%2BraSdqpANQ8WwnObtNRob6d2Qcaln5anFTqLTwSadO6pcYLKzHIbKD5aKhfLr3TSwZFHF4rMiFKjzJwoyFmHT-WHYoGSbRUTQQcHbSqpMDacYhQavVZExlmZlFNlwjm48hOVTaEr6BkzQIsslZE7DLTaXlcqXgHQWLGA4aEhg9WCaVT8ikK-G0Wkqn4AWggmvlyjAmicJTMltl7JxIE0zhqjBdmIBds51RA1Vorl9BEthtt8MisDmsFg2jwDqdvtEoiAA">digikey</a></td>
+<td></td>
+</tr>
+<tr>
+<td>Code Examples</td>
+<td><a href="https://github.com/ESP32DE/ESP32-S3-DevKitC-1https://github.com/ESP32DE/ESP32-S3-DevKitC-1">Link</a></td>
+<td>url(s) for libraries on github or other sites related to the microcontroller and your planned peripherals</td>
+</tr>
+<tr>
+<td>Unit cost</td>
+<td>$2.95</td>
+<td></td>
+</tr>
+<tr>
+<td>Absolute Maximum Current for entire IC</td>
+<td>500ma</td>
+<td>Find in the microcontroller datasheet</td>
+</tr>
+<tr>
+<td>Supply Voltage Range</td>
+<td>3.0V / 3.3V / 3.6V</td>
+<td>Min / Nominal / Max / Absolute Max, as found in datasheet</td>
+</tr>
+<tr>
+<td>Maximum GPIO current <br> (per pin)</td>
+<td>20mA / 40mA</td>
+<td>Nominal / Max</td>
+</tr>
+<tr>
+<td>Supports External Interrupts?</td>
+<td>Yes</td>
+<td>as found in datasheet</td>
+</tr>
+<tr>
+<td>Required Programming Hardware, Cost, URL</td>
+<td>[Link]{https://docs.espressif.com/projects/esp-idf/en/latest/esp32s3/get-started/index.html}</td>
+<td>as found in datasheet</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Module</th>
+<th># Available</th>
+<th>Needed</th>
+<th>Associated Pins (or * for any)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UART</td>
+<td>3 modules</td>
+<td>1</td>
+<td>36 37</td>
+</tr>
+<tr>
+<td>SPI</td>
+<td>8</td>
+<td>?</td>
+<td>5 12 13 14 15 18 19 23</td>
+</tr>
+<tr>
+<td>I2C</td>
+<td>4</td>
+<td>?</td>
+<td>16 17 21 22</td>
+</tr>
+<tr>
+<td>GPIO</td>
+<td>43</td>
+<td>?</td>
+<td>*</td>
+</tr>
+<tr>
+<td>ADC</td>
+<td>2 modules</td>
+<td>?</td>
+<td>4 5 6 7 12 15 17 18 19 20 21 22 23 24 25 26 27 28 38 39</td>
+</tr>
+<tr>
+<td>LED PWM</td>
+<td>8 channels</td>
+<td>?</td>
+<td>*</td>
+</tr>
+<tr>
+<td>Motor PWM</td>
+<td>2 modules</td>
+<td>?</td>
+<td>*</td>
+</tr>
+</tbody>
+</table>
+<p>* The ESP32-S2 has multiple SPI interfaces, but some are for internal use</p>
+<p><a class="glightbox" href="ESP32-Pin-Layout.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="ESP32-Pin-Layout.jpg" /></a>
+<a class="glightbox" href="ESP32-Pin-Diagram.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="ESP32-Pin-Diagram.jpg" /></a></p>
 
 
 
