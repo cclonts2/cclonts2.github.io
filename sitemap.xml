@@ -21,6 +21,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://embedded-systems-design.github.io/template_report/ESP32-Table/ESP32%20Table/</loc>
+         <lastmod>2025-02-09</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://embedded-systems-design.github.io/template_report/component-selection/</loc>
          <lastmod>2025-02-09</lastmod>
          <changefreq>daily</changefreq>
