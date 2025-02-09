@@ -3,20 +3,28 @@ site_url: https://cclonts2.github.io
 repo_url: https://github.com/cclonts2.github.io/
 edit_uri: edit/main/docs/
 theme:
-  name: material
-  custom_dir: custom_theme/
   palette:
-    - primary: black
-      accent: green
+
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
       toggle:
-        icon: material/weather-night
-        name: Switch to dark mode
-    - scheme: slate  # Dark mode
-      primary: maroon
-      accent: gold
-      toggle:
-        icon: material/weather-sunny
+        icon: material/brightness-auto
         name: Switch to light mode
+
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default 
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+
   font:
     text: Roboto
   logo: static/logo.svg
