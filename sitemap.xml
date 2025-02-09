@@ -16,6 +16,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://embedded-systems-design.github.io/template_report/Datasheets/</loc>
+         <lastmod>2025-02-09</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://embedded-systems-design.github.io/template_report/ESP32-Table/</loc>
          <lastmod>2025-02-09</lastmod>
          <changefreq>daily</changefreq>
