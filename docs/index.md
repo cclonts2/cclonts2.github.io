@@ -5,6 +5,7 @@ tags:
 
 # EGR 314 - Embedded System Design Project II
 ![](learn-embedded-system-design.jpg)
+<img src="https://github.com/cclonts2/cclonts2.github.io/blob/main/docs/subfolder/learn-embedded-system-design.jpg" alt="Main Page">
 ## STEM Weather Station Project
 
 **Team Number:** 303  
