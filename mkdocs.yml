@@ -6,8 +6,8 @@ theme:
   name: material
   custom_dir: custom_theme/
   palette:
-    primary: black
-    accent: cyan
+    primary: blue grey
+    accent: amber
   font:
     text: Roboto
   logo: static/logo.svg
