@@ -1,5 +1,5 @@
 ---
-ESP32 Table
+title: ESP32 Table
 ---
 
 | ESP Info                                      | Answer |                                                                                                      |
