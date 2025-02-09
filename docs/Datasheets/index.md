@@ -3,6 +3,7 @@ title: Datasheets
 ---
 
 ![](MFG_Attachment-2-ESP32-S3-WROOM-1.jpg)
+
 | **ESP32-S3-WROOM-1-N4**          | **Link**   |
 |----------------------------------|------------|
 | Product Page URL                              | [espressif](https://www.espressif.com/en/products/modules)                                                           | Found on Espressif.com |
@@ -12,6 +13,7 @@ title: Datasheets
 
 
 ![](296~4200577-3~KTT~3.jpg)
+
 | **LM1086ISX-3.3/NOPB**          | **Link**   |
 |---------------------------------|------------|
 | Product Page URL                              | [Texas Instrument](https://www.ti.com/product/LM1086/part-details/LM1086ISX-3.3/NOPB) | Found on ti.com |
