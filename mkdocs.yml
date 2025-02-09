@@ -3,6 +3,9 @@ site_url: https://cclonts2.github.io
 repo_url: https://github.com/cclonts2.github.io/
 edit_uri: edit/main/docs/
 theme:
+  name: material
+  custom_dir: custom_theme/
+  
   palette:
 
     # Palette toggle for automatic mode
