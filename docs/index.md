@@ -1,23 +1,15 @@
 ---
 title: Welcome
 tags:
-
 ---
 
-## You are on Cade Clonts' page for EGR 314
-9
+# EGR 314 - Embedded System Design Project II
+![](learn-embedded-system-design.webp)
+## STEM Weather Station Project
 
-
-
-
-# Title or Home Page
-
-## Project Name
-
-**Team Number:** [Your Team Number]  
-**Team Members:** [Optional: List of Team Members]  
-**Preparation Date:** [Date]  
-**Semester and Year:** [Semester and Year]  
-**University:** [University Name]  
-**Class:** [Class Name]  
-**Professor:** [Professor Name]
+**Team Number:** 303  
+**Team Members:** Dan, Tyler, Jahmel 
+**Preparation Date:** Febuary 8, 2025  
+**Semester and Year:** Spring 2025  
+**University:** Arizona State University 
+**Professor:** K. Nichols
