@@ -4,7 +4,7 @@ tags:
 ---
 
 # EGR 314 - Embedded System Design Project II
-![](learn-embedded-system-design.webp)
+![](learn-embedded-system-design.jpg)
 ## STEM Weather Station Project
 
 **Team Number:** 303  
