@@ -5,7 +5,7 @@ title: Charts
 
 ## Block Diagram
 
-![](Block-Diagram-v1-1.png)
+![](Block-Diagram-V1-1.jpg)
 
 
 
