@@ -1,4 +1,6 @@
-## Component Selection
+---
+title: Component Selection
+---
 
 *Table 1*
 
