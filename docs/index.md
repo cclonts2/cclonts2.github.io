@@ -11,7 +11,7 @@ tags:
 
 **Team Number:** 303  
 
-**Team Members:** Cade Clonts, Tyler Dean, Jaheml Garduno, Daniel Resnick
+**Team Members:** Cade Clonts, Tyler Dean, Jahmel Garduno, Daniel Resnick
 
 **Preparation Date:** Febuary 21, 2025  
 
