@@ -10,9 +10,9 @@ A 3.3V voltage regulator is also included to ensure a stable power supply for th
 
 ### __Schematic__
 
-<p align="center">
-<img src="Schematic-Design.png" alt="Schematic-Design">
-</p>
+
+![Schematic Design](Schematic-Design.png)
+
 
 ### __Download Links__
 - [PDF](EGR314-Schematic.pdf)
