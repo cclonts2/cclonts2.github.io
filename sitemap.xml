@@ -16,17 +16,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://cclonts2.github.io/board-design/Index/</loc>
+         <lastmod>2025-02-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://cclonts2.github.io/charts/</loc>
          <lastmod>2025-02-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://cclonts2.github.io/component-selection/</loc>
-         <lastmod>2025-02-22</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://cclonts2.github.io/schematic-design/Index/</loc>
          <lastmod>2025-02-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
