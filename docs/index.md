@@ -31,7 +31,7 @@ Team Website   | [link](https://egr314-2025-s-303.github.io/EGR314-2025-S-303/)
 Cade Clonts   | [link](https://cclonts2.github.io/)
 Tyler Dean | [link](https://ty-357.github.io/)
 Jahmel Garduno | [link](https://jahmelg10.github.io/)
-Daniel Resnick | [link]()
+Daniel Resnick | [link](https://drez85.github.io/)
 
 ### __My Assignments__
 Assignment | Link
