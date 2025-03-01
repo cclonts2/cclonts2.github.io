@@ -23,6 +23,10 @@ A 3.3V voltage regulator is also included to ensure a stable power supply for th
 
 Coming Soon
 
+### __Bill of Materials__
+
+![Bill of Materials](bom.png)
+
 ### __Power Budget__
 
 ![Power Budget](power-budget.png)
