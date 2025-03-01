@@ -6,17 +6,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://cclonts2.github.io/Block%20Diagram/</loc>
-         <lastmod>2025-03-01</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://cclonts2.github.io/Datasheets/</loc>
          <lastmod>2025-03-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://cclonts2.github.io/ESP32-Table/</loc>
+         <lastmod>2025-03-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://cclonts2.github.io/block-diagram/</loc>
          <lastmod>2025-03-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
