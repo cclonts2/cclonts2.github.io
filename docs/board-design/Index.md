@@ -25,7 +25,7 @@ Coming Soon
 
 ### __Bill of Materials__
 
-![Bill of Materials](bom.png)
+<img src="bom.png">
 
 ### __Power Budget__
 
