@@ -6,6 +6,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://cclonts2.github.io/Block%20Diagram/</loc>
+         <lastmod>2025-03-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://cclonts2.github.io/Datasheets/</loc>
          <lastmod>2025-03-01</lastmod>
          <changefreq>daily</changefreq>
@@ -17,11 +22,6 @@
     </url>
     <url>
          <loc>https://cclonts2.github.io/board-design/Index/</loc>
-         <lastmod>2025-03-01</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://cclonts2.github.io/charts/</loc>
          <lastmod>2025-03-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
