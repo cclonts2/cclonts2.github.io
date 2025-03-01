@@ -85,3 +85,15 @@ extra:
     - icon: fontawesome/regular/file-code
       link: /2023_fall
       name: 2023 Site    
+
+nav:
+  - Home: index.md
+  - ESP32 Overview:
+      - ESP32 Table: ESP32-Table.md
+  - Block Diagram: 
+      - Overview: block-diagram/index.md
+  - Board Design:
+      - Overview: board-design/index.md
+  - Component Selection:
+      - Overview: component-selection/index.md
+  - Datasheets: Datasheets/index.md
