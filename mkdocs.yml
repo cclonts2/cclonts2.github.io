@@ -88,13 +88,9 @@ extra:
 
 nav:
   - Home: index.md
-    - Block Diagram: 
-      - Overview: block-diagram/index.md
-    - Component Selection:
-      - Overview: component-selection/index.md
-  - Board Design:
-      - Overview: board-design/Index.md
-  - ESP32 Overview:
-      - Overview: ESP32-Table/index.md
-  - Datasheets:
-     - Overview: Datasheets/index.md
+    - Block Diagram: block-diagram/index.md
+    - Component Selection: component-selection/index.md
+    - Board Design: board-design/Index.md
+    - ESP32 Overview: ESP32-Table/index.md
+    - Datasheets: Datasheets/index.md
+
