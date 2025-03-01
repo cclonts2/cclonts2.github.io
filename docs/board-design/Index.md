@@ -25,18 +25,7 @@ Coming Soon
 
 ### __Bill of Materials__
 
-<img src="bom.png">
-<img src="bom-copy.png">
-<img src="bom.jpg">
-
-<img src="bom.png" width="150">
-<img src="bom-copy.png" width="150">
-<img src="bom.jpg" width="150">
-
 ![Bill of Materials](bom.png)
-![Bill of Materials](bom-copy.png)
-![Bill of Materials](bom.jpg)
-
 
 ### __Power Budget__
 
