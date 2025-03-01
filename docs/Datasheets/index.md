@@ -14,8 +14,8 @@ title: Datasheets
 
 <img src="296~4200577-3~KTT~3.jpg" width="150">
 
-| **LM1086ISX-3.3/NOPB**          | **Link**   |
+| **LM1085ISX-3.3/NOPB**          | **Link**   |
 |---------------------------------|------------|
-| Product Page URL                              | [Texas Instrument](https://www.ti.com/product/LM1086/part-details/LM1086ISX-3.3/NOPB) | Found on ti.com |
-| LM1086 Datasheet URL                          | [Datasheet](https://www.ti.com/lit/ds/symlink/lm1086.pdf?HQS=dis-dk-null-digikeymode-dsf-pf-null-wwe&ts=1739050948904&ref_url=https%253A%252F%252Fwww.ti.com%252Fgeneral%252Fdocs%252Fsuppproductinfo.tsp%253FdistId%253D10%2526gotoUrl%253Dhttps%253A%252F%252Fwww.ti.com%252Flit%252Fgpn%252Flm1086) |
+| Product Page URL                              | [Texas Instrument](https://www.ti.com/product/LM1085/part-details/LM1085ISX-3.3/NOPB?keyMatch=LM1085ISX-3.3/NOPB&tisearch=universal_search&usecase=OPN) | Found on ti.com |
+| LM1086 Datasheet URL                          | [Datasheet](https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Flm1085) |
 
