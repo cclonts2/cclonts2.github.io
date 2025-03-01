@@ -25,4 +25,4 @@ Coming Soon
 
 ### __Power Budget__
 
-Coming Soon
+[Power Budget](power-budget.png)
