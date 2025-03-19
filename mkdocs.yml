@@ -1,6 +1,6 @@
 site_name: EGR314 Report - Cade Clonts
 site_url: https://cclonts2.github.io
-repo_url: https://github.com/cclonts2/cclonts2.github.io/
+repo_url: https://github.com/cclonts2/cclonts2.github.io
 edit_uri: edit/main/docs/
 theme:
   name: material
