@@ -472,6 +472,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#code" class="md-nav__link">
+    Code
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -743,6 +750,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#code" class="md-nav__link">
+    Code
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -836,6 +850,61 @@
 </tr>
 </tbody>
 </table>
+<h3 id="code"><strong>Code</strong></h3>
+<h1 id="include-mcc_generated_filesmcch">include "mcc_generated_files/mcc.h"</h1>
+<p>uint16_t time_ms = 0; uint16_t time_s = 0; float time = 0; uint8_t duty_cycle = 50; // Start at 50% duty cycle</p>
+<p>void timer_callback(void){ time_ms++; if (time_ms &gt;= 1000) { time_ms -= 1000; time_s++; IO_RD2_Toggle(); } }</p>
+<p>void update_pwm_duty(uint8_t duty) { if (duty &gt; 100) duty = 100; // Limit max duty cycle if (duty &lt; 0) duty = 0; // Limit min duty cycle }</p>
+<p>void pin_up(void){ if (duty_cycle &lt; 100) { duty_cycle += 5; update_pwm_duty(duty_cycle);</p>
+<pre><code>// Debugging message
+char buffer[32];
+sprintf(buffer, "Duty Up: %d%%\n", duty_cycle);
+for (int i = 0; buffer[i] != '\0'; i++) {
+    putch(buffer[i]);  
+}
+</code></pre>
+<p>}
+}</p>
+<p>void pin_down(void){ if (duty_cycle &gt; 0) { duty_cycle -= 5; update_pwm_duty(duty_cycle);</p>
+<pre><code>// Debugging message
+char buffer[32];
+sprintf(buffer, "Duty Down: %d%%\n", duty_cycle);
+for (int i = 0; buffer[i] != '\0'; i++) {
+    putch(buffer[i]);  
+}
+</code></pre>
+<p>}
+}</p>
+<p>/<em> Main application </em>/ void main(void) { // Initialize the device SYSTEM_Initialize(); EUSART2_Initialize(); // Initialize EUSART2 for serial communication</p>
+<p>IOCCF1_SetInterruptHandler(pin_up);
+IOCCF2_SetInterruptHandler(pin_down);</p>
+<p>// Enable global interrupts and peripheral interrupts
+INTERRUPT_GlobalInterruptEnable();
+INTERRUPT_PeripheralInterruptEnable();</p>
+<p>TMR2_SetInterruptHandler(timer_callback);
+TMR2_Start();
+update_pwm_duty(duty_cycle); // Set initial PWM value</p>
+<p>// Debugging: Confirm initialization
+char init_msg[] = "System Initialized\n";
+for (int i = 0; init_msg[i] != '\0'; i++) {
+    putch(init_msg[i]);
+}</p>
+<p>while (1)
+{
+    time = time_s + (time_ms / 1000.0);</p>
+<pre><code>// Prepare the time string
+char buffer[32];
+sprintf(buffer, "t= %.2fs\n", time);
+
+// Send the time string over UART
+for (int i = 0; buffer[i] != '\0'; i++) {
+    putch(buffer[i]);  
+}
+
+__delay_ms(500);
+</code></pre>
+<p>}
+}</p>
 
 
 
