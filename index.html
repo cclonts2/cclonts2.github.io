@@ -851,6 +851,8 @@
 </tbody>
 </table>
 <h3 id="code"><strong>Code</strong></h3>
+<p>-<a href="code-blink-time-output.txt">code1</a>
+-<a href="code-duty-cycle.txt">code2</a></p>
 <h1 id="include-mcc_generated_filesmcch">include "mcc_generated_files/mcc.h"</h1>
 <p>uint16_t time_ms = 0; uint16_t time_s = 0; float time = 0; uint8_t duty_cycle = 50; // Start at 50% duty cycle</p>
 <p>void timer_callback(void){ time_ms++; if (time_ms &gt;= 1000) { time_ms -= 1000; time_s++; IO_RD2_Toggle(); } }</p>
