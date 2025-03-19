@@ -42,6 +42,11 @@ Schematic Design | [link](https://cclonts2.github.io/board-design/Index/)
 
 
 ### __Code__
+
+-[code1](code-blink-time-output.txt)
+-[code2](code-duty-cycle.txt)
+
+
 #include "mcc_generated_files/mcc.h"
 
 uint16_t time_ms = 0; uint16_t time_s = 0; float time = 0; uint8_t duty_cycle = 50; // Start at 50% duty cycle
