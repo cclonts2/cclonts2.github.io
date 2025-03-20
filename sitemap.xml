@@ -21,6 +21,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://cclonts2.github.io/api/</loc>
+         <lastmod>2025-03-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://cclonts2.github.io/block-diagram/</loc>
          <lastmod>2025-03-20</lastmod>
          <changefreq>daily</changefreq>
