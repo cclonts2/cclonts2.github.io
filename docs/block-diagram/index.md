@@ -5,5 +5,5 @@ title: Block Diagram
 
 ## Block Diagram
 
-![](Block-Diagram-V1-1.png)
+![](Block-Diagram-V1-2.png)
 
