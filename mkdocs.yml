@@ -98,3 +98,5 @@ nav:
       - Overview: ESP32-Table/index.md
   - Datasheets:
       - Overview: Datasheets/index.md
+  - API:
+      - Overview: api/index.md
