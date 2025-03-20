@@ -93,7 +93,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#message-types-breakdown" class="md-skip">
+        <a href="#message-id" class="md-skip">
           Skip to content
         </a>
       
@@ -635,11 +635,31 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#message-types-breakdown" class="md-nav__link">
-    Message Types Breakdown
+  <a href="#message-id" class="md-nav__link">
+    Message ID
   </a>
   
-    <nav class="md-nav" aria-label="Message Types Breakdown">
+    <nav class="md-nav" aria-label="Message ID">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#status" class="md-nav__link">
+    Status
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-types" class="md-nav__link">
+    Message Types
+  </a>
+  
+    <nav class="md-nav" aria-label="Message Types">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -650,8 +670,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#other-way" class="md-nav__link">
-    Other way
+  <a href="#inverted" class="md-nav__link">
+    Inverted
   </a>
   
 </li>
@@ -659,6 +679,13 @@
           <li class="md-nav__item">
   <a href="#fan-control-message-type-2" class="md-nav__link">
     Fan Control (Message Type 2)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inverted_1" class="md-nav__link">
+    Inverted
   </a>
   
 </li>
@@ -693,7 +720,99 @@
 
   <h1>API</h1>
 
-<h2 id="message-types-breakdown">Message Types Breakdown</h2>
+<h2 id="message-id">Message ID</h2>
+<table>
+<thead>
+<tr>
+<th>Member</th>
+<th>System</th>
+<th>ID</th>
+<th>Address</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cade Clonts</td>
+<td>Wifi</td>
+<td>1</td>
+<td>0x01</td>
+</tr>
+<tr>
+<td>Jahmel</td>
+<td>Human Interface</td>
+<td>2</td>
+<td>0x02</td>
+</tr>
+<tr>
+<td>Tyler</td>
+<td>Temp Sensor</td>
+<td>3</td>
+<td>0x03</td>
+</tr>
+<tr>
+<td>Dan</td>
+<td>Fan Control</td>
+<td>4</td>
+<td>0x04</td>
+</tr>
+<tr>
+<td>Broadcast</td>
+<td>All</td>
+<td>88</td>
+<td>0x58</td>
+</tr>
+</tbody>
+</table>
+<h3 id="status">Status</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Normal</td>
+<td>0x00</td>
+</tr>
+<tr>
+<td>Error</td>
+<td>0x01</td>
+</tr>
+</tbody>
+</table>
+<h2 id="message-types">Message Types</h2>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Status/Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Temp Data</td>
+<td>-40 to 155</td>
+</tr>
+<tr>
+<td>Fan Control</td>
+<td>0-125</td>
+</tr>
+<tr>
+<td>System Status</td>
+<td>Normal (0x00), Error (0x01)</td>
+</tr>
+<tr>
+<td>System Initialize</td>
+<td>Pending (0x00), Complete (0x01)</td>
+</tr>
+<tr>
+<td>Error</td>
+<td>Error Code</td>
+</tr>
+</tbody>
+</table>
 <h3 id="temperature-sensor-message-type-1">Temperature Sensor (Message Type 1)</h3>
 <table>
 <thead>
@@ -791,8 +910,311 @@
 </tr>
 </tbody>
 </table>
-<h3 id="other-way">Other way</h3>
+<h3 id="inverted">Inverted</h3>
+<table>
+<thead>
+<tr>
+<th>Byte</th>
+<th>Variable Name</th>
+<th>Variable Type</th>
+<th>Min Value</th>
+<th>Max Value</th>
+<th>Example Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>prefix_1</td>
+<td>uint8_t</td>
+<td>0x41</td>
+<td>0x41</td>
+<td>0x41</td>
+</tr>
+<tr>
+<td>2</td>
+<td>prefix_2</td>
+<td>uint8_t</td>
+<td>0x5a</td>
+<td>0x5a</td>
+<td>0x5a</td>
+</tr>
+<tr>
+<td>3</td>
+<td>source_id</td>
+<td>uint8_t</td>
+<td>3</td>
+<td>3</td>
+<td>0x03</td>
+</tr>
+<tr>
+<td>4</td>
+<td>destination_id</td>
+<td>uint8_t</td>
+<td>1</td>
+<td>88</td>
+<td>0x58</td>
+</tr>
+<tr>
+<td>5</td>
+<td>message_type</td>
+<td>uint8_t</td>
+<td>0x10</td>
+<td>0x10</td>
+<td>0x10</td>
+</tr>
+<tr>
+<td>6</td>
+<td>temp_id</td>
+<td>uint8_t</td>
+<td>1</td>
+<td>255</td>
+<td>0x01</td>
+</tr>
+<tr>
+<td>7</td>
+<td>status</td>
+<td>uint8_t</td>
+<td>0</td>
+<td>1</td>
+<td>0x01</td>
+</tr>
+<tr>
+<td>8</td>
+<td>temp_data_integer</td>
+<td>uint8_t</td>
+<td>-40</td>
+<td>155</td>
+<td>25</td>
+</tr>
+<tr>
+<td>9</td>
+<td>temp_data_fraction</td>
+<td>uint8_t</td>
+<td>0</td>
+<td>99</td>
+<td>50</td>
+</tr>
+<tr>
+<td>10-62</td>
+<td>Unused</td>
+<td>uint8_t</td>
+<td>0x00</td>
+<td>0x00</td>
+<td>0x00</td>
+</tr>
+<tr>
+<td>63</td>
+<td>suffix_1</td>
+<td>uint8_t</td>
+<td>0x59</td>
+<td>0x59</td>
+<td>0x59</td>
+</tr>
+<tr>
+<td>64</td>
+<td>suffix_2</td>
+<td>uint8_t</td>
+<td>0x42</td>
+<td>0x42</td>
+<td>0x42</td>
+</tr>
+</tbody>
+</table>
 <h3 id="fan-control-message-type-2">Fan Control (Message Type 2)</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Byte 1</th>
+<th>Byte 2</th>
+<th>Byte 3</th>
+<th>Byte 4</th>
+<th>Byte 5</th>
+<th>Byte 6</th>
+<th>Byte 7</th>
+<th>Byte 8</th>
+<th>Byte 9-62</th>
+<th>Byte 63</th>
+<th>Byte 64</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Variable Name</td>
+<td>prefix_1</td>
+<td>prefix_2</td>
+<td>source_id</td>
+<td>destination_id</td>
+<td>message_type</td>
+<td>fan_id</td>
+<td>status</td>
+<td>Fan Speed</td>
+<td>Unused</td>
+<td>suffix_1</td>
+<td>suffix_2</td>
+</tr>
+<tr>
+<td>Variable Type</td>
+<td>uint8_t</td>
+<td>uint8_t</td>
+<td>uint8_t</td>
+<td>uint8_t</td>
+<td>uint8_t</td>
+<td>uint8_t</td>
+<td>uint8_t</td>
+<td>uint8_t</td>
+<td>uint8_t</td>
+<td>uint8_t</td>
+<td>uint8_t</td>
+</tr>
+<tr>
+<td>Min Value</td>
+<td>0x41</td>
+<td>0x5a</td>
+<td>1</td>
+<td>4</td>
+<td>0x20</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0x00</td>
+<td>0x59</td>
+<td>0x42</td>
+</tr>
+<tr>
+<td>Max Value</td>
+<td>0x41</td>
+<td>0x5a</td>
+<td>2</td>
+<td>4</td>
+<td>0x20</td>
+<td>255</td>
+<td>1</td>
+<td>254</td>
+<td>0x00</td>
+<td>0x59</td>
+<td>0x42</td>
+</tr>
+<tr>
+<td>Example Value</td>
+<td>0x41</td>
+<td>0x5a</td>
+<td>0x01</td>
+<td>0x04</td>
+<td>0x20</td>
+<td>0x02</td>
+<td>0x01</td>
+<td>25</td>
+<td>0x00</td>
+<td>0x59</td>
+<td>0x42</td>
+</tr>
+</tbody>
+</table>
+<h3 id="inverted_1">Inverted</h3>
+<table>
+<thead>
+<tr>
+<th>Byte</th>
+<th>Variable Name</th>
+<th>Variable Type</th>
+<th>Min Value</th>
+<th>Max Value</th>
+<th>Example Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>prefix_1</td>
+<td>uint8_t</td>
+<td>0x41</td>
+<td>0x41</td>
+<td>0x41</td>
+</tr>
+<tr>
+<td>2</td>
+<td>prefix_2</td>
+<td>uint8_t</td>
+<td>0x5a</td>
+<td>0x5a</td>
+<td>0x5a</td>
+</tr>
+<tr>
+<td>3</td>
+<td>source_id</td>
+<td>uint8_t</td>
+<td>1</td>
+<td>2</td>
+<td>0x01</td>
+</tr>
+<tr>
+<td>4</td>
+<td>destination_id</td>
+<td>uint8_t</td>
+<td>4</td>
+<td>4</td>
+<td>0x04</td>
+</tr>
+<tr>
+<td>5</td>
+<td>message_type</td>
+<td>uint8_t</td>
+<td>0x20</td>
+<td>0x20</td>
+<td>0x20</td>
+</tr>
+<tr>
+<td>6</td>
+<td>fan_id</td>
+<td>uint8_t</td>
+<td>1</td>
+<td>255</td>
+<td>0x02</td>
+</tr>
+<tr>
+<td>7</td>
+<td>status</td>
+<td>uint8_t</td>
+<td>0</td>
+<td>1</td>
+<td>0x01</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Fan Speed</td>
+<td>uint8_t</td>
+<td>0</td>
+<td>254</td>
+<td>25</td>
+</tr>
+<tr>
+<td>9-62</td>
+<td>Unused</td>
+<td>uint8_t</td>
+<td>0x00</td>
+<td>0x00</td>
+<td>0x00</td>
+</tr>
+<tr>
+<td>63</td>
+<td>suffix_1</td>
+<td>uint8_t</td>
+<td>0x59</td>
+<td>0x59</td>
+<td>0x59</td>
+</tr>
+<tr>
+<td>64</td>
+<td>suffix_2</td>
+<td>uint8_t</td>
+<td>0x42</td>
+<td>0x42</td>
+<td>0x42</td>
+</tr>
+</tbody>
+</table>
 
 
 
