@@ -3,7 +3,12 @@ title: API
 tags:
 ---
 
+# Summary
+This API documentation provides details about the message structure, status codes, and message types used in the system. It includes tables for Message ID, Status, Message Types, Temperature Sensor (Message Type 1), and Fan Control (Message Type 2).
+
 ## Message ID
+
+The Message ID table defines the unique identifiers for system members and their associated addresses. Each member is assigned a specific ID and address for communication within the system.
 
 | Member        | System            | ID  | Address |
 |---------------|-------------------|-----|---------|
@@ -14,12 +19,17 @@ tags:
 | Broadcast     | All               | 88  | 0x58    |
 
 ### Status
+
+The Status table defines the status codes used in the system to indicate the state of a message or operation.
+
 | Status | Code  |
 |--------|-------|
 | Normal | 0x00  |
 | Error  | 0x01  |
 
 ## Message Types
+
+The Message Types table categorizes the types of messages and their associated status or code ranges.
 
 | Category         | Status/Code |
 |------------------|-------------|
@@ -31,15 +41,8 @@ tags:
 
 ### Temperature Sensor (Message Type 1)
 
-|               | Byte 1   | Byte 2   | Byte 3    | Byte 4         | Byte 5       | Byte 6  | Byte 7 | Byte 8    | Byte 9 | Byte 10-62 | Byte 63 | Byte 64 |
-|---------------|----------|----------|-----------|----------------|--------------|---------|--------|-----------|--------|------------|---------|---------|
-| Variable Name | prefix_1 | prefix_2 | source_id | destination_id | message_type | temp_id | status | temp_data_integer | temp_data_fraction | Unused  | suffix_1 | suffix_2 |
-| Variable Type | uint8_t  | uint8_t  | uint8_t   | uint8_t        | uint8_t      | uint8_t | uint8_t | uint8_t  | uint8_t  | uint8_t | uint8_t | uint8_t |
-| Min Value     | 0x41     | 0x5a     | 3         | 1              | 0x10         | 1       | 0      | -40       | 0        | 0x00    | 0x59    | 0x42    |
-| Max Value     | 0x41     | 0x5a     | 3         | 88             | 0x10         | 255     | 1      | 155       | 99       | 0x00    | 0x59    | 0x42    |
-| Example Value | 0x41     | 0x5a     | 0x03      | 0x58           | 0x10         | 0x01    | 0x01   | 25        | 50       | 0x00    | 0x59    | 0x42    |
+The Temperature Sensor table defines the structure of messages for temperature data. Each byte in the message is mapped to a specific variable, with details about its type, range, and example values.
 
-### Inverted
 | Byte | Variable Name | Variable Type | Min Value | Max Value | Example Value |
 |---|------------------|--------------|-----------|-----------|--------------|
 | 1 | prefix_1        | uint8_t      | 0x41      | 0x41      | 0x41         |
@@ -55,17 +58,23 @@ tags:
 | 63 | suffix_1        | uint8_t      | 0x59      | 0x59      | 0x59         |
 | 64 | suffix_2        | uint8_t      | 0x42      | 0x42      | 0x42         |
 
+<details>
+<summary>Inverted</summary>
+  
+|               | Byte 1   | Byte 2   | Byte 3    | Byte 4         | Byte 5       | Byte 6  | Byte 7 | Byte 8    | Byte 9 | Byte 10-62 | Byte 63 | Byte 64 |
+|---------------|----------|----------|-----------|----------------|--------------|---------|--------|-----------|--------|------------|---------|---------|
+| Variable Name | prefix_1 | prefix_2 | source_id | destination_id | message_type | temp_id | status | temp_data_integer | temp_data_fraction | Unused  | suffix_1 | suffix_2 |
+| Variable Type | uint8_t  | uint8_t  | uint8_t   | uint8_t        | uint8_t      | uint8_t | uint8_t | uint8_t  | uint8_t  | uint8_t | uint8_t | uint8_t |
+| Min Value     | 0x41     | 0x5a     | 3         | 1              | 0x10         | 1       | 0      | -40       | 0        | 0x00    | 0x59    | 0x42    |
+| Max Value     | 0x41     | 0x5a     | 3         | 88             | 0x10         | 255     | 1      | 155       | 99       | 0x00    | 0x59    | 0x42    |
+| Example Value | 0x41     | 0x5a     | 0x03      | 0x58           | 0x10         | 0x01    | 0x01   | 25        | 50       | 0x00    | 0x59    | 0x42    |
+
+</details>
+
 ### Fan Control (Message Type 2)
 
-|               | Byte 1   | Byte 2   | Byte 3    | Byte 4         | Byte 5       | Byte 6  | Byte 7 | Byte 8    | Byte 9-62 | Byte 63 | Byte 64 |
-|---------------|----------|----------|-----------|----------------|--------------|---------|--------|-----------|--------|----------|----------|
-| Variable Name | prefix_1 | prefix_2 | source_id | destination_id | message_type | fan_id | status | Fan Speed | Unused | suffix_1 | suffix_2 |
-| Variable Type | uint8_t  | uint8_t  | uint8_t   | uint8_t        | uint8_t      | uint8_t | uint8_t | uint8_t  | uint8_t | uint8_t | uint8_t |
-| Min Value     | 0x41     | 0x5a     | 1         | 4              | 0x20         | 1       | 0      | 0         | 0x00   | 0x59     | 0x42 |
-| Max Value     | 0x41     | 0x5a     | 2         | 4              | 0x20         | 255     | 1      | 254       | 0x00   | 0x59     | 0x42 |
-| Example Value | 0x41     | 0x5a     | 0x01      | 0x04           | 0x20         | 0x02    | 0x01   | 25        | 0x00   | 0x59     | 0x42 |
+The Fan Control table defines the structure of messages for controlling fan speed. Each byte in the message is mapped to a specific variable, with details about its type, range, and example values.
 
-### Inverted
 | Byte  | Variable Name      | Variable Type | Min Value | Max Value | Example Value |
 |-------|-------------------|--------------|-----------|-----------|--------------|
 | 1     | prefix_1         | uint8_t      | 0x41      | 0x41      | 0x41         |
@@ -79,3 +88,17 @@ tags:
 | 9-62  | Unused          | uint8_t      | 0x00      | 0x00      | 0x00         |
 | 63    | suffix_1        | uint8_t      | 0x59      | 0x59      | 0x59         |
 | 64    | suffix_2        | uint8_t      | 0x42      | 0x42      | 0x42         |
+
+<details>
+<summary>Inverted</summary>
+
+|               | Byte 1   | Byte 2   | Byte 3    | Byte 4         | Byte 5       | Byte 6  | Byte 7 | Byte 8    | Byte 9-62 | Byte 63 | Byte 64 |
+|---------------|----------|----------|-----------|----------------|--------------|---------|--------|-----------|--------|----------|----------|
+| Variable Name | prefix_1 | prefix_2 | source_id | destination_id | message_type | fan_id | status | Fan Speed | Unused | suffix_1 | suffix_2 |
+| Variable Type | uint8_t  | uint8_t  | uint8_t   | uint8_t        | uint8_t      | uint8_t | uint8_t | uint8_t  | uint8_t | uint8_t | uint8_t |
+| Min Value     | 0x41     | 0x5a     | 1         | 4              | 0x20         | 1       | 0      | 0         | 0x00   | 0x59     | 0x42 |
+| Max Value     | 0x41     | 0x5a     | 2         | 4              | 0x20         | 255     | 1      | 254       | 0x00   | 0x59     | 0x42 |
+| Example Value | 0x41     | 0x5a     | 0x01      | 0x04           | 0x20         | 0x02    | 0x01   | 25        | 0x00   | 0x59     | 0x42 |
+
+</details>
+
