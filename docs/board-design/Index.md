@@ -13,20 +13,71 @@ A 3.3V voltage regulator is also included to ensure a stable power supply for th
 
 ![Schematic Design](Schematic-Design.png)
 
+<details>
+<summary>Altium</summary>
 
-### __Download Links__
+![Altium Schematic Design](altium-schematic.png)
+- [PDF](altium-schematic.pdf)
+
+</details>
+
+  ### __Download Links__
 - [PDF](EGR314-Schematic.pdf)
 - [ZIP Cadence Folder](EGR-314-PRJT-CC.zip)
 
 
 ### __PCB Design__
 
-Coming Soon
+![PCB Design](pcb-board-front.jpg)
+
+- [Zip Gerber Files](gerber-files-cc-c1.2.zip)
 
 ### __Bill of Materials__
 
+| Part Name/Description       | Manufacturer Part #     | Vendor Link                                                                 | Datasheet Link                                                                                     | Schematic Reference Designators |
+|-----------------------------|-------------------------|-----------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|---------------------------------|
+| Capacitor 22uF              | CL21A226MAYNNNE         | [Digikey](https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL21A226MAYNNNE/10479857) | [Datasheet](https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/339/CL21A226MAYNNNE_Spec.pdf) | C2,C6                           |
+| Capacitor 10uF 0805         | GRM21BR61E106KA73L      | [Digikey](https://www.digikey.com/en/products/detail/murata-electronics/GRM21BR61E106KA73L/2334874) | [Datasheet](https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM21BR61E106KA73-01.pdf)    | C1,C8,C9                        |
+| Capacitor 0.1uF 0805        | CC0805KRX7R9BB104       | [Digikey](https://www.digikey.com/en/products/detail/yageo/CC0805KRX7R9BB104/302874) | [Datasheet](https://www.yageo.com/upload/media/product/productsearch/datasheet/mlcc/UPY-GPHC_X7R_6.3V-to-250V_24.pdf) | C3,C4,C5,C7,C10,C11             |
+| Green LED 0805              | 150080VS75000           | [Digikey](https://www.digikey.com/en/products/detail/w%C3%BCrth-elektronik/150080VS75000/4489924) | [Datasheet](https://www.we-online.com/components/products/datasheet/150080VS75000.pdf)             | D1,D2,D3,D4                     |
+| Red LED 0805                | 150080RS75000           | [Digikey](https://www.digikey.com/en/products/detail/w%C3%BCrth-elektronik/150080RS75000/4489918) | [Datasheet](https://www.we-online.com/components/products/datasheet/150080RS75000.pdf)             |                                 |
+| Diode 0805                  | SD0805S020S1R0          | [Digikey](https://www.digikey.com/en/products/detail/kyocera-avx/SD0805S020S1R0/3749517) | [Datasheet](https://datasheets.kyocera-avx.com/schottky.pdf)                                       | D6,D7                           |
+| 8 Pin header                | 702460801               | [Digikey](https://www.digikey.com/en/products/detail/molex/0702460801/760165) | [Datasheet](https://www.molex.com/en-us/products/part-detail/702460801?display=pdf)                | J1,J2                           |
+| Usb connector               | USB3131-30-0230-A       | [Digikey](https://www.digikey.com/en/products/detail/gct/USB3131-30-0230-A/9859642) | [Datasheet](https://gct.co/files/specs/usb3131-spec.pdf)                                           | J3                              |
+| Barrel Jack                 | 54-00167                | [Digikey](https://www.digikey.com/en/products/detail/tensility-international-corp/54-00167/10459295) | [Datasheet](https://tensility.s3.us-west-2.amazonaws.com/uploads/pdffiles/54-00167.pdf)            | J4                              |
+| Jumper Female               | 15291026                | [Digikey](https://www.digikey.com/en/products/detail/molex/0015291026/315120) | [Datasheet](https://www.molex.com/pdm_docs/sd/015291026_sd.pdf)                                    | J5,J6,J7                        |
+| Jumper Male                 | 68705-102HLF            | [Digikey](https://www.digikey.com/en/products/detail/amphenol-cs-fci/68705-102HLF/4403759) | [Datasheet](https://cdn.amphenol-cs.com/media/wysiwyg/files/documentation/datasheet/boardwiretoboard/bwb_bergstik.pdf) |                                 |
+| Inductor 3.3uH              | VLS5045EX-3R3N          | [Digikey](https://www.digikey.com/en/products/detail/tdk-corporation/VLS5045EX-3R3N/5286683) | [Datasheet](https://product.tdk.com/system/files/dam/doc/product/inductor/inductor/smd/catalog/inductor_commercial_power_vls5045ex_en.pdf) | L1                              |
+| Resistor 33.2k Ohm 0805     | RMCF0805FT33K2          | [Digikey](https://www.digikey.com/en/products/detail/stackpole-electronics-inc/RMCF0805FT33K2/1760489) | [Datasheet](https://www.seielect.com/catalog/sei-rmcf_rmcp.pdf)                                    | R1                              |
+| Resistor 10k Ohm 0805       | RMCF0805FT10K0          | [Digikey](https://www.digikey.com/en/products/detail/stackpole-electronics-inc/RMCF0805FT10K0/1760676) | [Datasheet](https://www.seielect.com/catalog/sei-rmcf_rmcp.pdf)                                    | R2,R7,R8,R9                     |
+| Resistor 100 Ohm 0805       | RMCF0805FT100R          | [Digikey](https://www.digikey.com/en/products/detail/stackpole-electronics-inc/RMCF0805FT100R/1760711) | [Datasheet](https://www.seielect.com/catalog/sei-rmcf_rmcp.pdf)                                    | R3,R4,R5,R6                     |
+| Switch                      | B3U-1000P               | [Digikey](https://www.digikey.com/en/products/detail/omron-electronics-inc-emc-div/B3U-1000P/1534338) | [Datasheet](https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3u.pdf)                           | SW1,SW2,SW3                     |
+| Test Points                 | 5006                    | [Digikey](https://www.digikey.com/en/products/detail/keystone-electronics/5006/255330) | [Datasheet](https://www.keyelco.com/userAssets/file/M65p56.pdf)                                    | TP1,TP2,TP3,TP4,TP5             |
+| ESP32                       | ESP32-S3-WROOM-1-N4     | [Digikey](https://www.digikey.com/en/products/detail/espressif-systems/ESP32-S3-WROOM-1-N4/16162639) | [Datasheet](https://www.espressif.com/sites/default/files/documentation/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf) | U1                              |
+| Voltage Reg 5v-3v           | TS1117BCW33 RPG         | [Digikey](https://www.digikey.com/en/products/detail/taiwan-semiconductor-corporation/TS1117BCW33-RPG/7370078) | [Datasheet](https://services.taiwansemi.com/storage/resources/datasheet/TS1117B_I2405.pdf)          | U2                              |
+| Voltage Reg 12v-3v          | AP62300TWU-7            | [Digikey](https://www.digikey.com/en/products/detail/diodes-incorporated/AP62300TWU-7/12702558) | [Datasheet](https://www.diodes.com/assets/Datasheets/AP62300_AP62301_AP62300T.pdf)                  | VR1                             |
+| Fuse Holder                 | 4628                    | [Digikey](https://www.digikey.com/en/products/detail/keystone-electronics/4628/2137316) | [Datasheet](https://www.keyelco.com/userAssets/file/M65p44.pdf)                                    |                                 |
+| Power Supply                |                         | [Digikey](https://www.digikey.com/en/products/detail/tdk-lambda/LS100-12/1918815) | [Datasheet](https://product.tdk.com/system/files/dam/doc/product/power/switching-power/ac-dc-converter/catalog/ls25-150_e.pdf) |                                 |
+| Ribbon Cable                |                         | [Amazon](https://www.amazon.com/gp/product/B07DFBPZLJ?smid=A64W1E1ZZHST0) |                                                                                                    |                                 |
+| Fuse 2A                     |                         | [Digikey](https://www.digikey.com/en/products/detail/optifuse/TCC-2A/12090267) | [Datasheet](https://www.optifuse.com/optifuse_ecommerce_tools/datasheets/TCC.pdf)                  | F1                              |
+| Header pins 18              |                         |                                                                             |                                                                                                    | J8,J9                           |
+<details>
+<summary>Download Files</summary>
+
 ![Bill of Materials](bom.png)
+
+- [XLSX File](bom.xlsx)
+
+</details>
 
 ### __Power Budget__
 
 ![Power Budget](power-budget.png)
+
+<details>
+<summary>Download Files</summary>
+
+- [XLSX File](power-budget.xlsx)
+
+</details>
+
