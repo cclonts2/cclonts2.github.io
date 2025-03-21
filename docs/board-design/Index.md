@@ -22,6 +22,7 @@ A 3.3V voltage regulator is also included to ensure a stable power supply for th
 </details>
 
   ### __Download Links__
+
 - [PDF](EGR314-Schematic.pdf)
 - [ZIP Cadence Folder](EGR-314-PRJT-CC.zip)
 
