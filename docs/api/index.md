@@ -58,18 +58,114 @@ The Temperature Sensor table defines the structure of messages for temperature d
 | 63 | suffix_1        | uint8_t      | 0x59      | 0x59      | 0x59         |
 | 64 | suffix_2        | uint8_t      | 0x42      | 0x42      | 0x42         |
 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
 <details>
-<summary>Inverted</summary>
-  
-|               | Byte 1   | Byte 2   | Byte 3    | Byte 4         | Byte 5       | Byte 6  | Byte 7 | Byte 8    | Byte 9 | Byte 10-62 | Byte 63 | Byte 64 |
-|---------------|----------|----------|-----------|----------------|--------------|---------|--------|-----------|--------|------------|---------|---------|
-| Variable Name | prefix_1 | prefix_2 | source_id | destination_id | message_type | temp_id | status | temp_data_integer | temp_data_fraction | Unused  | suffix_1 | suffix_2 |
-| Variable Type | uint8_t  | uint8_t  | uint8_t   | uint8_t        | uint8_t      | uint8_t | uint8_t | uint8_t  | uint8_t  | uint8_t | uint8_t | uint8_t |
-| Min Value     | 0x41     | 0x5a     | 3         | 1              | 0x10         | 1       | 0      | -40       | 0        | 0x00    | 0x59    | 0x42    |
-| Max Value     | 0x41     | 0x5a     | 3         | 88             | 0x10         | 255     | 1      | 155       | 99       | 0x00    | 0x59    | 0x42    |
-| Example Value | 0x41     | 0x5a     | 0x03      | 0x58           | 0x10         | 0x01    | 0x01   | 25        | 50       | 0x00    | 0x59    | 0x42    |
+    <summary>Inverted</summary>
+    <table>
+        <tr>
+            <th></th>
+            <th>Byte 1</th>
+            <th>Byte 2</th>
+            <th>Byte 3</th>
+            <th>Byte 4</th>
+            <th>Byte 5</th>
+            <th>Byte 6</th>
+            <th>Byte 7</th>
+            <th>Byte 8</th>
+            <th>Byte 9</th>
+            <th>Byte 10-62</th>
+            <th>Byte 63</th>
+            <th>Byte 64</th>
+        </tr>
+        <tr>
+            <td><strong>Variable Name</strong></td>
+            <td>prefix_1</td>
+            <td>prefix_2</td>
+            <td>source_id</td>
+            <td>destination_id</td>
+            <td>message_type</td>
+            <td>temp_id</td>
+            <td>status</td>
+            <td>temp_data_integer</td>
+            <td>temp_data_fraction</td>
+            <td>Unused</td>
+            <td>suffix_1</td>
+            <td>suffix_2</td>
+        </tr>
+        <tr>
+            <td><strong>Variable Type</strong></td>
+            <td>uint8_t</td>
+            <td>uint8_t</td>
+            <td>uint8_t</td>
+            <td>uint8_t</td>
+            <td>uint8_t</td>
+            <td>uint8_t</td>
+            <td>uint8_t</td>
+            <td>uint8_t</td>
+            <td>uint8_t</td>
+            <td>uint8_t</td>
+            <td>uint8_t</td>
+            <td>uint8_t</td>
+        </tr>
+        <tr>
+            <td><strong>Min Value</strong></td>
+            <td>0x41</td>
+            <td>0x5a</td>
+            <td>3</td>
+            <td>1</td>
+            <td>0x10</td>
+            <td>1</td>
+            <td>0</td>
+            <td>-40</td>
+            <td>0</td>
+            <td>0x00</td>
+            <td>0x59</td>
+            <td>0x42</td>
+        </tr>
+        <tr>
+            <td><strong>Max Value</strong></td>
+            <td>0x41</td>
+            <td>0x5a</td>
+            <td>3</td>
+            <td>88</td>
+            <td>0x10</td>
+            <td>255</td>
+            <td>1</td>
+            <td>155</td>
+            <td>99</td>
+            <td>0x00</td>
+            <td>0x59</td>
+            <td>0x42</td>
+        </tr>
+        <tr>
+            <td><strong>Example Value</strong></td>
+            <td>0x41</td>
+            <td>0x5a</td>
+            <td>0x03</td>
+            <td>0x58</td>
+            <td>0x10</td>
+            <td>0x01</td>
+            <td>0x01</td>
+            <td>25</td>
+            <td>50</td>
+            <td>0x00</td>
+            <td>0x59</td>
+            <td>0x42</td>
+        </tr>
+    </table>
 
 </details>
+
+</body>
+</html>
 
 ### Fan Control (Message Type 2)
 
@@ -89,16 +185,103 @@ The Fan Control table defines the structure of messages for controlling fan spee
 | 63    | suffix_1        | uint8_t      | 0x59      | 0x59      | 0x59         |
 | 64    | suffix_2        | uint8_t      | 0x42      | 0x42      | 0x42         |
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
 <details>
-<summary>Inverted</summary>
-
-|               | Byte 1   | Byte 2   | Byte 3    | Byte 4         | Byte 5       | Byte 6  | Byte 7 | Byte 8    | Byte 9-62 | Byte 63 | Byte 64 |
-|---------------|----------|----------|-----------|----------------|--------------|---------|--------|-----------|--------|----------|----------|
-| Variable Name | prefix_1 | prefix_2 | source_id | destination_id | message_type | fan_id | status | Fan Speed | Unused | suffix_1 | suffix_2 |
-| Variable Type | uint8_t  | uint8_t  | uint8_t   | uint8_t        | uint8_t      | uint8_t | uint8_t | uint8_t  | uint8_t | uint8_t | uint8_t |
-| Min Value     | 0x41     | 0x5a     | 1         | 4              | 0x20         | 1       | 0      | 0         | 0x00   | 0x59     | 0x42 |
-| Max Value     | 0x41     | 0x5a     | 2         | 4              | 0x20         | 255     | 1      | 254       | 0x00   | 0x59     | 0x42 |
-| Example Value | 0x41     | 0x5a     | 0x01      | 0x04           | 0x20         | 0x02    | 0x01   | 25        | 0x00   | 0x59     | 0x42 |
-
+    <summary>Inverted</summary>
+    <table>
+        <tr>
+            <th></th>
+            <th>Byte 1</th>
+            <th>Byte 2</th>
+            <th>Byte 3</th>
+            <th>Byte 4</th>
+            <th>Byte 5</th>
+            <th>Byte 6</th>
+            <th>Byte 7</th>
+            <th>Byte 8</th>
+            <th>Byte 9-62</th>
+            <th>Byte 63</th>
+            <th>Byte 64</th>
+        </tr>
+        <tr>
+            <td><strong>Variable Name</strong></td>
+            <td>prefix_1</td>
+            <td>prefix_2</td>
+            <td>source_id</td>
+            <td>destination_id</td>
+            <td>message_type</td>
+            <td>fan_id</td>
+            <td>status</td>
+            <td>Fan Speed</td>
+            <td>Unused</td>
+            <td>suffix_1</td>
+            <td>suffix_2</td>
+        </tr>
+        <tr>
+            <td><strong>Variable Type</strong></td>
+            <td>uint8_t</td>
+            <td>uint8_t</td>
+            <td>uint8_t</td>
+            <td>uint8_t</td>
+            <td>uint8_t</td>
+            <td>uint8_t</td>
+            <td>uint8_t</td>
+            <td>uint8_t</td>
+            <td>uint8_t</td>
+            <td>uint8_t</td>
+            <td>uint8_t</td>
+        </tr>
+        <tr>
+            <td><strong>Min Value</strong></td>
+            <td>0x41</td>
+            <td>0x5a</td>
+            <td>1</td>
+            <td>4</td>
+            <td>0x20</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0x00</td>
+            <td>0x59</td>
+            <td>0x42</td>
+        </tr>
+        <tr>
+            <td><strong>Max Value</strong></td>
+            <td>0x41</td>
+            <td>0x5a</td>
+            <td>2</td>
+            <td>4</td>
+            <td>0x20</td>
+            <td>255</td>
+            <td>1</td>
+            <td>254</td>
+            <td>0x00</td>
+            <td>0x59</td>
+            <td>0x42</td>
+        </tr>
+        <tr>
+            <td><strong>Example Value</strong></td>
+            <td>0x41</td>
+            <td>0x5a</td>
+            <td>0x01</td>
+            <td>0x04</td>
+            <td>0x20</td>
+            <td>0x02</td>
+            <td>0x01</td>
+            <td>25</td>
+            <td>0x00</td>
+            <td>0x59</td>
+            <td>0x42</td>
+        </tr>
+    </table>
 </details>
 
+</body>
+</html>
