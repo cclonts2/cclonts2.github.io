@@ -8,32 +8,20 @@ To support debugging and monitoring, the schematic includes three dedicated debu
 
 A 3.3V voltage regulator is also included to ensure a stable power supply for the communication circuitry. This schematic meets user needs and product requirements by enabling efficient data exchange, supporting UART communication, and providing robust system diagnostics.
 
+- [ZIP Project Folder](altium-project.zip)
+
 ### __Schematic__
 
+![Schematic Design](altium-schematic.png)
 
-![Schematic Design](Schematic-Design.png)
-
-<details>
-<summary>Altium</summary>
-
-<img src="altium-schematic.png" alt="Altium Schematic Design">
-
-<a href="altium-schematic.pdf">PDF</a>
-
-![Altium Schematic Design](altium-schematic.png)
 - [PDF](altium-schematic.pdf)
-
-</details>
-
-  ### __Download Links__
-
-- [PDF](EGR314-Schematic.pdf)
-- [ZIP Cadence Folder](EGR-314-PRJT-CC.zip)
-
 
 ### __PCB Design__
 
-![PCB Design](pcb-board-front.jpg)
+![PCB Top Design](top-layer.png)
+![PCB Bottom Design](bottom-layer.png)
+![PCB Top](pcb-board-front.jpg)
+![PCB Bottom](pcb-board-bottom.jpg)
 
 - [Zip Gerber Files](gerber-files-cc-c1.2.zip)
 
@@ -66,128 +54,10 @@ A 3.3V voltage regulator is also included to ensure a stable power supply for th
 | Ribbon Cable                |                         | [Amazon](https://www.amazon.com/gp/product/B07DFBPZLJ?smid=A64W1E1ZZHST0) |                                                                                                    |                                 |
 | Fuse 2A                     |                         | [Digikey](https://www.digikey.com/en/products/detail/optifuse/TCC-2A/12090267) | [Datasheet](https://www.optifuse.com/optifuse_ecommerce_tools/datasheets/TCC.pdf)                  | F1                              |
 | Header pins 18              |                         |                                                                             |                                                                                                    | J8,J9                           |
-<details>
-<summary>Download Files</summary>
 
-![Bill of Materials](bom.png)
-
-- [XLSX File](bom.xlsx)
-
-</details>
+- [XLSX Files](bom.xlsx)
 
 ### __Power Budget__
 
 ![Power Budget](power-budget.png)
-
-<details>
-<summary>Download Files</summary>
-
-- [XLSX File](power-budget.xlsx)
-
-</details>
-
-
-
-<details>
-<summary>Test</summary>
-  
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
-
-<h2>Table Example</h2>
-
-<table>
-    <tr>
-        <th></th>
-        <th>Byte 1</th>
-        <th>Byte 2</th>
-        <th>Byte 3</th>
-        <th>Byte 4</th>
-        <th>Byte 5</th>
-        <th>Byte 6</th>
-        <th>Byte 7</th>
-        <th>Byte 8</th>
-        <th>Byte 9-62</th>
-        <th>Byte 63</th>
-        <th>Byte 64</th>
-    </tr>
-    <tr>
-        <td><strong>Variable Name</strong></td>
-        <td>prefix_1</td>
-        <td>prefix_2</td>
-        <td>source_id</td>
-        <td>destination_id</td>
-        <td>message_type</td>
-        <td>fan_id</td>
-        <td>status</td>
-        <td>Fan Speed</td>
-        <td>Unused</td>
-        <td>suffix_1</td>
-        <td>suffix_2</td>
-    </tr>
-    <tr>
-        <td><strong>Variable Type</strong></td>
-        <td>uint8_t</td>
-        <td>uint8_t</td>
-        <td>uint8_t</td>
-        <td>uint8_t</td>
-        <td>uint8_t</td>
-        <td>uint8_t</td>
-        <td>uint8_t</td>
-        <td>uint8_t</td>
-        <td>uint8_t</td>
-        <td>uint8_t</td>
-        <td>uint8_t</td>
-    </tr>
-    <tr>
-        <td><strong>Min Value</strong></td>
-        <td>0x41</td>
-        <td>0x5a</td>
-        <td>1</td>
-        <td>4</td>
-        <td>0x20</td>
-        <td>1</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0x00</td>
-        <td>0x59</td>
-        <td>0x42</td>
-    </tr>
-    <tr>
-        <td><strong>Max Value</strong></td>
-        <td>0x41</td>
-        <td>0x5a</td>
-        <td>2</td>
-        <td>4</td>
-        <td>0x20</td>
-        <td>255</td>
-        <td>1</td>
-        <td>254</td>
-        <td>0x00</td>
-        <td>0x59</td>
-        <td>0x42</td>
-    </tr>
-    <tr>
-        <td><strong>Example Value</strong></td>
-        <td>0x41</td>
-        <td>0x5a</td>
-        <td>0x01</td>
-        <td>0x04</td>
-        <td>0x20</td>
-        <td>0x02</td>
-        <td>0x01</td>
-        <td>25</td>
-        <td>0x00</td>
-        <td>0x59</td>
-        <td>0x42</td>
-    </tr>
-</table>
-
-</body>
-</html>
-</details>
+- [XLSX Files](power-budget.xlsx)
