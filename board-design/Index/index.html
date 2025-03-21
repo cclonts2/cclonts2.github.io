@@ -849,27 +849,19 @@
 <p><strong>The schematic below details the bidirectional communication system, ensuring reliable data transmission between components. This design incorporates several key sections, each serving a critical function in facilitating seamless communication.</strong></p>
 <p>To support debugging and monitoring, the schematic includes three dedicated debug LEDs, providing visual indicators for data transmission and system status. Test points are strategically placed to allow for easy signal probing and troubleshooting. Additionally, reset and boot switches are integrated to enable system resets and firmware updates as needed.</p>
 <p>A 3.3V voltage regulator is also included to ensure a stable power supply for the communication circuitry. This schematic meets user needs and product requirements by enabling efficient data exchange, supporting UART communication, and providing robust system diagnostics.</p>
-<h3 id="schematic"><strong>Schematic</strong></h3>
-<p><a class="glightbox" href="../Schematic-Design.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Schematic Design" src="../Schematic-Design.png" /></a></p>
-<details>
-<summary>Altium</summary>
-
-<a class="glightbox" href="altium-schematic.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="altium-schematic.png" alt="Altium Schematic Design"></a>
-
-<a href="altium-schematic.pdf">PDF</a>
-
-![Altium Schematic Design](altium-schematic.png)
-- [PDF](altium-schematic.pdf)
-
-</details>
-
-<p>### <strong>Download Links</strong></p>
 <ul>
-<li><a href="../EGR314-Schematic.pdf">PDF</a></li>
-<li><a href="../EGR-314-PRJT-CC.zip">ZIP Cadence Folder</a></li>
+<li><a href="altium-project.zip">ZIP Project Folder</a></li>
+</ul>
+<h3 id="schematic"><strong>Schematic</strong></h3>
+<p><a class="glightbox" href="../altium-schematic.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Schematic Design" src="../altium-schematic.png" /></a></p>
+<ul>
+<li><a href="../altium-schematic.pdf">PDF</a></li>
 </ul>
 <h3 id="pcb-design"><strong>PCB Design</strong></h3>
-<p><a class="glightbox" href="../pcb-board-front.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="PCB Design" src="../pcb-board-front.jpg" /></a></p>
+<p><a class="glightbox" href="top-layer.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="PCB Top Design" src="top-layer.png" /></a>
+<a class="glightbox" href="bottom-layer.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="PCB Bottom Design" src="bottom-layer.png" /></a>
+<a class="glightbox" href="../pcb-board-front.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="PCB Top" src="../pcb-board-front.jpg" /></a>
+<a class="glightbox" href="pcb-board-bottom.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="PCB Bottom" src="pcb-board-bottom.jpg" /></a></p>
 <ul>
 <li><a href="gerber-files-cc-c1.2.zip">Zip Gerber Files</a></li>
 </ul>
@@ -1062,138 +1054,12 @@
 </tr>
 </tbody>
 </table>
-<details>
-<summary>Download Files</summary>
-
-![Bill of Materials](bom.png)
-
-- [XLSX File](bom.xlsx)
-
-</details>
-
+<ul>
+<li><a href="bom.xlsx">XLSX Files</a></li>
+</ul>
 <h3 id="power-budget"><strong>Power Budget</strong></h3>
-<p><a class="glightbox" href="../power-budget.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Power Budget" src="../power-budget.png" /></a></p>
-<details>
-<summary>Download Files</summary>
-
-- [XLSX File](power-budget.xlsx)
-
-</details>
-
-<details>
-<summary>Test</summary>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
-    html.glightbox-open { overflow: initial; height: 100%; }
-    .gslide-title { margin-top: 0px; user-select: text; }
-    .gslide-desc { color: #666; user-select: text; }
-    .gslide-image img { background: white; }
-    .gscrollbar-fixer { padding-right: 15px; }
-    .gdesc-inner { font-size: 0.75rem; }
-    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
-    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
-<body>
-
-<h2>Table Example</h2>
-
-<table>
-    <tr>
-        <th></th>
-        <th>Byte 1</th>
-        <th>Byte 2</th>
-        <th>Byte 3</th>
-        <th>Byte 4</th>
-        <th>Byte 5</th>
-        <th>Byte 6</th>
-        <th>Byte 7</th>
-        <th>Byte 8</th>
-        <th>Byte 9-62</th>
-        <th>Byte 63</th>
-        <th>Byte 64</th>
-    </tr>
-    <tr>
-        <td><strong>Variable Name</strong></td>
-        <td>prefix_1</td>
-        <td>prefix_2</td>
-        <td>source_id</td>
-        <td>destination_id</td>
-        <td>message_type</td>
-        <td>fan_id</td>
-        <td>status</td>
-        <td>Fan Speed</td>
-        <td>Unused</td>
-        <td>suffix_1</td>
-        <td>suffix_2</td>
-    </tr>
-    <tr>
-        <td><strong>Variable Type</strong></td>
-        <td>uint8_t</td>
-        <td>uint8_t</td>
-        <td>uint8_t</td>
-        <td>uint8_t</td>
-        <td>uint8_t</td>
-        <td>uint8_t</td>
-        <td>uint8_t</td>
-        <td>uint8_t</td>
-        <td>uint8_t</td>
-        <td>uint8_t</td>
-        <td>uint8_t</td>
-    </tr>
-    <tr>
-        <td><strong>Min Value</strong></td>
-        <td>0x41</td>
-        <td>0x5a</td>
-        <td>1</td>
-        <td>4</td>
-        <td>0x20</td>
-        <td>1</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0x00</td>
-        <td>0x59</td>
-        <td>0x42</td>
-    </tr>
-    <tr>
-        <td><strong>Max Value</strong></td>
-        <td>0x41</td>
-        <td>0x5a</td>
-        <td>2</td>
-        <td>4</td>
-        <td>0x20</td>
-        <td>255</td>
-        <td>1</td>
-        <td>254</td>
-        <td>0x00</td>
-        <td>0x59</td>
-        <td>0x42</td>
-    </tr>
-    <tr>
-        <td><strong>Example Value</strong></td>
-        <td>0x41</td>
-        <td>0x5a</td>
-        <td>0x01</td>
-        <td>0x04</td>
-        <td>0x20</td>
-        <td>0x02</td>
-        <td>0x01</td>
-        <td>25</td>
-        <td>0x00</td>
-        <td>0x59</td>
-        <td>0x42</td>
-    </tr>
-</table>
-
-<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
-document$.subscribe(() => { lightbox.reload() });
-</script></body>
-</html>
-</details>
+<p><a class="glightbox" href="../power-budget.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Power Budget" src="../power-budget.png" /></a>
+- <a href="../power-budget.xlsx">XLSX Files</a></p>
 
 
 
@@ -1298,5 +1164,7 @@ document$.subscribe(() => { lightbox.reload() });
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
-  </body>
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
 </html>
