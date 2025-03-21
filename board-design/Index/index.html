@@ -610,13 +610,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#download-links" class="md-nav__link">
-    Download Links
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#pcb-design" class="md-nav__link">
     PCB Design
   </a>
@@ -808,13 +801,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#download-links" class="md-nav__link">
-    Download Links
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#pcb-design" class="md-nav__link">
     PCB Design
   </a>
@@ -865,17 +851,228 @@
 <p>A 3.3V voltage regulator is also included to ensure a stable power supply for the communication circuitry. This schematic meets user needs and product requirements by enabling efficient data exchange, supporting UART communication, and providing robust system diagnostics.</p>
 <h3 id="schematic"><strong>Schematic</strong></h3>
 <p><a class="glightbox" href="../Schematic-Design.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Schematic Design" src="../Schematic-Design.png" /></a></p>
-<h3 id="download-links"><strong>Download Links</strong></h3>
-<ul>
-<li><a href="../EGR314-Schematic.pdf">PDF</a></li>
-<li><a href="../EGR-314-PRJT-CC.zip">ZIP Cadence Folder</a></li>
-</ul>
+<details>
+<summary>Altium</summary>
+
+![Altium Schematic Design](altium-schematic.png)
+- [PDF](altium-schematic.pdf)
+
+</details>
+
+<p>### <strong>Download Links</strong>
+- <a href="../EGR314-Schematic.pdf">PDF</a>
+- <a href="../EGR-314-PRJT-CC.zip">ZIP Cadence Folder</a></p>
 <h3 id="pcb-design"><strong>PCB Design</strong></h3>
-<p>Coming Soon</p>
+<p><a class="glightbox" href="pcb-board-front.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="PCB Design" src="pcb-board-front.jpg" /></a></p>
+<ul>
+<li><a href="gerber-files-cc-c1.2.zip">Zip Gerber Files</a></li>
+</ul>
 <h3 id="bill-of-materials"><strong>Bill of Materials</strong></h3>
-<p><a class="glightbox" href="../bom.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Bill of Materials" src="../bom.png" /></a></p>
+<table>
+<thead>
+<tr>
+<th>Part Name/Description</th>
+<th>Manufacturer Part #</th>
+<th>Vendor Link</th>
+<th>Datasheet Link</th>
+<th>Schematic Reference Designators</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Capacitor 22uF</td>
+<td>CL21A226MAYNNNE</td>
+<td><a href="https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL21A226MAYNNNE/10479857">Digikey</a></td>
+<td><a href="https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/339/CL21A226MAYNNNE_Spec.pdf">Datasheet</a></td>
+<td>C2,C6</td>
+</tr>
+<tr>
+<td>Capacitor 10uF 0805</td>
+<td>GRM21BR61E106KA73L</td>
+<td><a href="https://www.digikey.com/en/products/detail/murata-electronics/GRM21BR61E106KA73L/2334874">Digikey</a></td>
+<td><a href="https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM21BR61E106KA73-01.pdf">Datasheet</a></td>
+<td>C1,C8,C9</td>
+</tr>
+<tr>
+<td>Capacitor 0.1uF 0805</td>
+<td>CC0805KRX7R9BB104</td>
+<td><a href="https://www.digikey.com/en/products/detail/yageo/CC0805KRX7R9BB104/302874">Digikey</a></td>
+<td><a href="https://www.yageo.com/upload/media/product/productsearch/datasheet/mlcc/UPY-GPHC_X7R_6.3V-to-250V_24.pdf">Datasheet</a></td>
+<td>C3,C4,C5,C7,C10,C11</td>
+</tr>
+<tr>
+<td>Green LED 0805</td>
+<td>150080VS75000</td>
+<td><a href="https://www.digikey.com/en/products/detail/w%C3%BCrth-elektronik/150080VS75000/4489924">Digikey</a></td>
+<td><a href="https://www.we-online.com/components/products/datasheet/150080VS75000.pdf">Datasheet</a></td>
+<td>D1,D2,D3,D4</td>
+</tr>
+<tr>
+<td>Red LED 0805</td>
+<td>150080RS75000</td>
+<td><a href="https://www.digikey.com/en/products/detail/w%C3%BCrth-elektronik/150080RS75000/4489918">Digikey</a></td>
+<td><a href="https://www.we-online.com/components/products/datasheet/150080RS75000.pdf">Datasheet</a></td>
+<td></td>
+</tr>
+<tr>
+<td>Diode 0805</td>
+<td>SD0805S020S1R0</td>
+<td><a href="https://www.digikey.com/en/products/detail/kyocera-avx/SD0805S020S1R0/3749517">Digikey</a></td>
+<td><a href="https://datasheets.kyocera-avx.com/schottky.pdf">Datasheet</a></td>
+<td>D6,D7</td>
+</tr>
+<tr>
+<td>8 Pin header</td>
+<td>702460801</td>
+<td><a href="https://www.digikey.com/en/products/detail/molex/0702460801/760165">Digikey</a></td>
+<td><a href="https://www.molex.com/en-us/products/part-detail/702460801?display=pdf">Datasheet</a></td>
+<td>J1,J2</td>
+</tr>
+<tr>
+<td>Usb connector</td>
+<td>USB3131-30-0230-A</td>
+<td><a href="https://www.digikey.com/en/products/detail/gct/USB3131-30-0230-A/9859642">Digikey</a></td>
+<td><a href="https://gct.co/files/specs/usb3131-spec.pdf">Datasheet</a></td>
+<td>J3</td>
+</tr>
+<tr>
+<td>Barrel Jack</td>
+<td>54-00167</td>
+<td><a href="https://www.digikey.com/en/products/detail/tensility-international-corp/54-00167/10459295">Digikey</a></td>
+<td><a href="https://tensility.s3.us-west-2.amazonaws.com/uploads/pdffiles/54-00167.pdf">Datasheet</a></td>
+<td>J4</td>
+</tr>
+<tr>
+<td>Jumper Female</td>
+<td>15291026</td>
+<td><a href="https://www.digikey.com/en/products/detail/molex/0015291026/315120">Digikey</a></td>
+<td><a href="https://www.molex.com/pdm_docs/sd/015291026_sd.pdf">Datasheet</a></td>
+<td>J5,J6,J7</td>
+</tr>
+<tr>
+<td>Jumper Male</td>
+<td>68705-102HLF</td>
+<td><a href="https://www.digikey.com/en/products/detail/amphenol-cs-fci/68705-102HLF/4403759">Digikey</a></td>
+<td><a href="https://cdn.amphenol-cs.com/media/wysiwyg/files/documentation/datasheet/boardwiretoboard/bwb_bergstik.pdf">Datasheet</a></td>
+<td></td>
+</tr>
+<tr>
+<td>Inductor 3.3uH</td>
+<td>VLS5045EX-3R3N</td>
+<td><a href="https://www.digikey.com/en/products/detail/tdk-corporation/VLS5045EX-3R3N/5286683">Digikey</a></td>
+<td><a href="https://product.tdk.com/system/files/dam/doc/product/inductor/inductor/smd/catalog/inductor_commercial_power_vls5045ex_en.pdf">Datasheet</a></td>
+<td>L1</td>
+</tr>
+<tr>
+<td>Resistor 33.2k Ohm 0805</td>
+<td>RMCF0805FT33K2</td>
+<td><a href="https://www.digikey.com/en/products/detail/stackpole-electronics-inc/RMCF0805FT33K2/1760489">Digikey</a></td>
+<td><a href="https://www.seielect.com/catalog/sei-rmcf_rmcp.pdf">Datasheet</a></td>
+<td>R1</td>
+</tr>
+<tr>
+<td>Resistor 10k Ohm 0805</td>
+<td>RMCF0805FT10K0</td>
+<td><a href="https://www.digikey.com/en/products/detail/stackpole-electronics-inc/RMCF0805FT10K0/1760676">Digikey</a></td>
+<td><a href="https://www.seielect.com/catalog/sei-rmcf_rmcp.pdf">Datasheet</a></td>
+<td>R2,R7,R8,R9</td>
+</tr>
+<tr>
+<td>Resistor 100 Ohm 0805</td>
+<td>RMCF0805FT100R</td>
+<td><a href="https://www.digikey.com/en/products/detail/stackpole-electronics-inc/RMCF0805FT100R/1760711">Digikey</a></td>
+<td><a href="https://www.seielect.com/catalog/sei-rmcf_rmcp.pdf">Datasheet</a></td>
+<td>R3,R4,R5,R6</td>
+</tr>
+<tr>
+<td>Switch</td>
+<td>B3U-1000P</td>
+<td><a href="https://www.digikey.com/en/products/detail/omron-electronics-inc-emc-div/B3U-1000P/1534338">Digikey</a></td>
+<td><a href="https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3u.pdf">Datasheet</a></td>
+<td>SW1,SW2,SW3</td>
+</tr>
+<tr>
+<td>Test Points</td>
+<td>5006</td>
+<td><a href="https://www.digikey.com/en/products/detail/keystone-electronics/5006/255330">Digikey</a></td>
+<td><a href="https://www.keyelco.com/userAssets/file/M65p56.pdf">Datasheet</a></td>
+<td>TP1,TP2,TP3,TP4,TP5</td>
+</tr>
+<tr>
+<td>ESP32</td>
+<td>ESP32-S3-WROOM-1-N4</td>
+<td><a href="https://www.digikey.com/en/products/detail/espressif-systems/ESP32-S3-WROOM-1-N4/16162639">Digikey</a></td>
+<td><a href="https://www.espressif.com/sites/default/files/documentation/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf">Datasheet</a></td>
+<td>U1</td>
+</tr>
+<tr>
+<td>Voltage Reg 5v-3v</td>
+<td>TS1117BCW33 RPG</td>
+<td><a href="https://www.digikey.com/en/products/detail/taiwan-semiconductor-corporation/TS1117BCW33-RPG/7370078">Digikey</a></td>
+<td><a href="https://services.taiwansemi.com/storage/resources/datasheet/TS1117B_I2405.pdf">Datasheet</a></td>
+<td>U2</td>
+</tr>
+<tr>
+<td>Voltage Reg 12v-3v</td>
+<td>AP62300TWU-7</td>
+<td><a href="https://www.digikey.com/en/products/detail/diodes-incorporated/AP62300TWU-7/12702558">Digikey</a></td>
+<td><a href="https://www.diodes.com/assets/Datasheets/AP62300_AP62301_AP62300T.pdf">Datasheet</a></td>
+<td>VR1</td>
+</tr>
+<tr>
+<td>Fuse Holder</td>
+<td>4628</td>
+<td><a href="https://www.digikey.com/en/products/detail/keystone-electronics/4628/2137316">Digikey</a></td>
+<td><a href="https://www.keyelco.com/userAssets/file/M65p44.pdf">Datasheet</a></td>
+<td></td>
+</tr>
+<tr>
+<td>Power Supply</td>
+<td></td>
+<td><a href="https://www.digikey.com/en/products/detail/tdk-lambda/LS100-12/1918815">Digikey</a></td>
+<td><a href="https://product.tdk.com/system/files/dam/doc/product/power/switching-power/ac-dc-converter/catalog/ls25-150_e.pdf">Datasheet</a></td>
+<td></td>
+</tr>
+<tr>
+<td>Ribbon Cable</td>
+<td></td>
+<td><a href="https://www.amazon.com/gp/product/B07DFBPZLJ?smid=A64W1E1ZZHST0">Amazon</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Fuse 2A</td>
+<td></td>
+<td><a href="https://www.digikey.com/en/products/detail/optifuse/TCC-2A/12090267">Digikey</a></td>
+<td><a href="https://www.optifuse.com/optifuse_ecommerce_tools/datasheets/TCC.pdf">Datasheet</a></td>
+<td>F1</td>
+</tr>
+<tr>
+<td>Header pins 18</td>
+<td></td>
+<td></td>
+<td></td>
+<td>J8,J9</td>
+</tr>
+</tbody>
+</table>
+<details>
+<summary>Download Files</summary>
+
+![Bill of Materials](bom.png)
+
+- [XLSX File](bom.xlsx)
+
+</details>
+
 <h3 id="power-budget"><strong>Power Budget</strong></h3>
 <p><a class="glightbox" href="../power-budget.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Power Budget" src="../power-budget.png" /></a></p>
+<details>
+<summary>Download Files</summary>
+
+- [XLSX File](power-budget.xlsx)
+
+</details>
 
 
 
