@@ -858,31 +858,38 @@
 <tr>
 <th>Category</th>
 <th>Status/Code</th>
+<th>Address</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Temp Data</td>
 <td>-40 to 155</td>
+<td>0x10</td>
 </tr>
 <tr>
 <td>Fan Control</td>
 <td>0-125</td>
+<td>0x20</td>
 </tr>
 <tr>
 <td>System Status</td>
 <td>Normal (0x00), Error (0x01)</td>
+<td>0x30</td>
 </tr>
 <tr>
 <td>System Initialize</td>
 <td>Pending (0x00), Complete (0x01)</td>
+<td>0x40</td>
 </tr>
 <tr>
 <td>Error</td>
 <td>Error Code</td>
+<td>0x99</td>
 </tr>
 </tbody>
 </table>
+<hr />
 <h3 id="temperature-sensor-message-type-1">Temperature Sensor (Message Type 1)</h3>
 <p>The Temperature Sensor table defines the structure of messages for temperature data. Each byte in the message is mapped to a specific variable, with details about its type, range, and example values.</p>
 <table>
@@ -1114,6 +1121,7 @@ document$.subscribe(() => { lightbox.reload() });
 </script></body>
 </html>
 
+<hr />
 <h3 id="fan-control-message-type-2">Fan Control (Message Type 2)</h3>
 <p>The Fan Control table defines the structure of messages for controlling fan speed. Each byte in the message is mapped to a specific variable, with details about its type, range, and example values.</p>
 <table>
@@ -1186,14 +1194,22 @@ document$.subscribe(() => { lightbox.reload() });
 </tr>
 <tr>
 <td>8</td>
-<td>Fan Speed</td>
+<td>fan_speed_data</td>
 <td>uint8_t</td>
 <td>0</td>
-<td>254</td>
-<td>25</td>
+<td>3</td>
+<td>0x02</td>
 </tr>
 <tr>
-<td>9-62</td>
+<td>9</td>
+<td>fan_speed_set</td>
+<td>uint8_t</td>
+<td>0</td>
+<td>3</td>
+<td>0x01</td>
+</tr>
+<tr>
+<td>10-62</td>
 <td>Unused</td>
 <td>uint8_t</td>
 <td>0x00</td>
@@ -1248,7 +1264,8 @@ document$.subscribe(() => { lightbox.reload() });
             <th>Byte 6</th>
             <th>Byte 7</th>
             <th>Byte 8</th>
-            <th>Byte 9-62</th>
+            <th>Byte 9</th>
+            <th>Byte 10-62</th>
             <th>Byte 63</th>
             <th>Byte 64</th>
         </tr>
@@ -1261,13 +1278,15 @@ document$.subscribe(() => { lightbox.reload() });
             <td>message_type</td>
             <td>fan_id</td>
             <td>status</td>
-            <td>Fan Speed</td>
+            <td>fan_speed_data</td>
+            <td>fan_speed_set</td>
             <td>Unused</td>
             <td>suffix_1</td>
             <td>suffix_2</td>
         </tr>
         <tr>
             <td><strong>Variable Type</strong></td>
+            <td>uint8_t</td>
             <td>uint8_t</td>
             <td>uint8_t</td>
             <td>uint8_t</td>
@@ -1290,6 +1309,7 @@ document$.subscribe(() => { lightbox.reload() });
             <td>1</td>
             <td>0</td>
             <td>0</td>
+            <td>0</td>
             <td>0x00</td>
             <td>0x59</td>
             <td>0x42</td>
@@ -1303,7 +1323,8 @@ document$.subscribe(() => { lightbox.reload() });
             <td>0x20</td>
             <td>255</td>
             <td>1</td>
-            <td>254</td>
+            <td>3</td>
+            <td>3</td>
             <td>0x00</td>
             <td>0x59</td>
             <td>0x42</td>
@@ -1317,7 +1338,8 @@ document$.subscribe(() => { lightbox.reload() });
             <td>0x20</td>
             <td>0x02</td>
             <td>0x01</td>
-            <td>25</td>
+            <td>0x02</td>
+            <td>0x01</td>
             <td>0x00</td>
             <td>0x59</td>
             <td>0x42</td>
