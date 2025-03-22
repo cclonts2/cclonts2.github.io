@@ -55,20 +55,6 @@ A 3.3V voltage regulator is also included to ensure a stable power supply for th
 | Fuse 2A                     |                         | [Digikey](https://www.digikey.com/en/products/detail/optifuse/TCC-2A/12090267) | [Datasheet](https://www.optifuse.com/optifuse_ecommerce_tools/datasheets/TCC.pdf)                  | F1                              |
 | Header pins 18              |                         |                                                                             |                                                                                                    | J8,J9                           |
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
-<details>
-    <summary>Image</summary>
-    <img src="bom.png" alt="Bill of Materials" />
-</details>
-</body>
-</html>
-
 - [XLSX Files](bom.xlsx)
 
 ### __Power Budget__
