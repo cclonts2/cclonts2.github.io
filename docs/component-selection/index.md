@@ -2,7 +2,7 @@
 title: Component Selection
 ---
 
-*Table 1*
+---
 
 ### **Microcontroller**
 
@@ -17,7 +17,7 @@ title: Component Selection
 **Rationale:** The ESP32-S3-WROOM-1-N4 is the optimal choice because it provides a balance of features, cost, and compatibility with the project requirements. Its integrated Wi-Fi and Bluetooth v5.0 capabilities, surface mount design, and sufficient memory make it ideal for bidirectional internet communication. While it has some limitations, such as limited RAM and a moderate operating temperature range, these are not critical for the project.
 
 
-*Table 2*
+---
 
 ### **USB Connector**
 
@@ -31,7 +31,7 @@ title: Component Selection
 
 **Rationale:** The 10118193-0001LF is the optimal choice because it provides a balance of high current handling, robust shielding, and mounting flexibility. Its 10,000 mating cycles and wide operating temperature range ensure durability and reliability
 
-*Table 3*
+---
 
 ### **Linear Voltage Regulator**
 
