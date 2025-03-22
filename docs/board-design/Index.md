@@ -60,4 +60,5 @@ A 3.3V voltage regulator is also included to ensure a stable power supply for th
 ### __Power Budget__
 
 ![Power Budget](power-budget.png)
+
 - [XLSX Files](power-budget.xlsx)
