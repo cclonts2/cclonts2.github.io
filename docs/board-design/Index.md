@@ -57,10 +57,9 @@ A 3.3V voltage regulator is also included to ensure a stable power supply for th
 
 <details>
     <summary>Image</summary>
-
- <img src="bom.png" alt="Bill of Materials" />
-
+    <img src="altium-schematic.png" alt="Bill of Materials" />
 </details>
+
 
 - [XLSX Files](bom.xlsx)
 
