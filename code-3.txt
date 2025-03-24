@@ -1,0 +1,25 @@
+#include "mcc_generated_files/mcc.h"
+
+void main(void)
+{
+    // Initialize the device
+    SYSTEM_Initialize();
+    
+    // Enable Global and Peripheral Interrupts (if needed)
+    INTERRUPT_GlobalInterruptEnable();
+    INTERRUPT_PeripheralInterruptEnable();
+
+    while (1)
+    {
+        // Check if data is available in UART receive buffer
+        if (EUSART2_is_rx_ready())
+        {
+            char receivedChar = EUSART2_Read();  // Read received character
+            //printf("%s",receivedChar);
+            EUSART2_Write(receivedChar);   
+            // Echo the character back
+        }
+        //printf("Goodbye;");
+        //__delay_ms(5000);
+    }
+}
