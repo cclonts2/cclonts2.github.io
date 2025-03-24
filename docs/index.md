@@ -72,3 +72,5 @@ Assignment | Link
 Block Diagram   | [link](https://cclonts2.github.io/block-diagram/)
 Component Selection | [link](https://cclonts2.github.io/component-selection/)
 Schematic Design | [link](https://cclonts2.github.io/board-design/Index/)
+
+- [Code 3](code-3.txt)
