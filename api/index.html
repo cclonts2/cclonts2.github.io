@@ -864,23 +864,13 @@
 <tbody>
 <tr>
 <td>Temp Data</td>
-<td>-40 to 155</td>
+<td>0 to 255</td>
 <td>0x10</td>
 </tr>
 <tr>
 <td>Fan Control</td>
 <td>0-125</td>
 <td>0x20</td>
-</tr>
-<tr>
-<td>System Status</td>
-<td>Normal (0x00), Error (0x01)</td>
-<td>0x30</td>
-</tr>
-<tr>
-<td>System Initialize</td>
-<td>Pending (0x00), Complete (0x01)</td>
-<td>0x40</td>
 </tr>
 <tr>
 <td>Error</td>
@@ -948,7 +938,7 @@
 <td>6</td>
 <td>temp_id</td>
 <td>uint8_t</td>
-<td>1</td>
+<td>0</td>
 <td>255</td>
 <td>0x01</td>
 </tr>
@@ -964,8 +954,8 @@
 <td>8</td>
 <td>temp_data_integer</td>
 <td>uint8_t</td>
-<td>-40</td>
-<td>155</td>
+<td>0</td>
+<td>255</td>
 <td>25</td>
 </tr>
 <tr>
@@ -1076,7 +1066,7 @@
             <td>0x10</td>
             <td>1</td>
             <td>0</td>
-            <td>-40</td>
+            <td>0</td>
             <td>0</td>
             <td>0x00</td>
             <td>0x59</td>
