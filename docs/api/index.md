@@ -33,10 +33,8 @@ The Message Types table categorizes the types of messages and their associated s
 
 | Category         | Status/Code | Address |
 |------------------|-------------|----|
-| Temp Data        | -40 to 155  | 0x10 |
+| Temp Data        | 0 to 255  | 0x10 |
 | Fan Control      | 0-125       | 0x20 |
-| System Status    | Normal (0x00), Error (0x01) | 0x30 |
-| System Initialize| Pending (0x00), Complete (0x01) | 0x40 |
 | Error            | Error Code  | 0x99 |
 
 ---
@@ -52,9 +50,9 @@ The Temperature Sensor table defines the structure of messages for temperature d
 | 3 | source_id       | uint8_t      | 3         | 3         | 0x03         |
 | 4 | destination_id  | uint8_t      | 1         | 88        | 0x58         |
 | 5 | message_type    | uint8_t      | 0x10      | 0x10      | 0x10         |
-| 6 | temp_id         | uint8_t      | 1         | 255       | 0x01         |
+| 6 | temp_id         | uint8_t      | 0         | 255       | 0x01         |
 | 7 | status          | uint8_t      | 0         | 1         | 0x01         |
-| 8 | temp_data_integer | uint8_t    | -40       | 155       | 25           |
+| 8 | temp_data_integer | uint8_t    | 0       | 255       | 25           |
 | 9 | temp_data_fraction | uint8_t   | 0         | 99        | 50           |
 | 10-62 | Unused       | uint8_t     | 0x00       | 0x00     | 0x00         |
 | 63 | suffix_1        | uint8_t      | 0x59      | 0x59      | 0x59         |
@@ -126,7 +124,7 @@ The Temperature Sensor table defines the structure of messages for temperature d
             <td>0x10</td>
             <td>1</td>
             <td>0</td>
-            <td>-40</td>
+            <td>0</td>
             <td>0</td>
             <td>0x00</td>
             <td>0x59</td>
