@@ -35,7 +35,6 @@ The Message Types table categorizes the types of messages and their associated s
 |------------------|-------------|----|
 | Temp Data        | 0 to 255  | 0x10 |
 | Fan Control      | 0-125       | 0x20 |
-| Error            | Error Code  | 0x99 |
 
 ---
 
@@ -292,8 +291,10 @@ The Fan Control table defines the structure of messages for controlling fan spee
     </table>
 </details>
 
+- [ESP Send Code](esp_send.zip)
 </body>
 </html>
+
 
 
 
