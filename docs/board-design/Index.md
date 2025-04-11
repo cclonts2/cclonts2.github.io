@@ -13,11 +13,13 @@ A 3.3V voltage regulator is also included to ensure a stable power supply for th
 
 ## __Schematic__
 
+- [Schematic PDF](altium-schematic.pdf)
+
 ![Schematic Design](altium-schematic.png)
 
-- [PDF](altium-schematic.pdf)
 
 ## __PCB Design__
+- [PCB PDF](PCB-design.pdf)
 
 ### __Top Layer__
 ![PCB Top Design](top-layer.png)
@@ -25,10 +27,10 @@ A 3.3V voltage regulator is also included to ensure a stable power supply for th
 ### __Bottom Layer__
 ![PCB Bottom Design](bottom-layer.png)
 
-### __Top Layer__
+### __PCB Top Layer__
 ![PCB Top](pcb-board-front.jpg)
 
-### __Bottom Layer__
+### __PCB Bottom Layer__
 ![PCB Bottom](pcb-board-bottom.png)
 
 ## __Bill of Materials__
