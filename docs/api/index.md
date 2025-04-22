@@ -292,7 +292,7 @@ The Fan Control table defines the structure of messages for controlling fan spee
 </body>
 </html>
 
-### Code
+## Code
 
 <details>
     <summary>ESP32 Code</summary>
