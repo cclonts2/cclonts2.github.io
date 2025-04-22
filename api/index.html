@@ -1333,6 +1333,17 @@ document$.subscribe(() => { lightbox.reload() });
 <details>
     <summary>ESP32 Code</summary>
         <pre><code>
+# Derived from: 
+# * https://github.com/peterhinch/micropython-async/blob/master/v3/as_demos/auart.py
+# * https://github.com/tve/mqboard/blob/master/mqtt_async/hello-world.py
+# * https://github.com/peterhinch/micropython-mqtt
+# * https://github.com/embedded-systems-design/external_pycopy-lib
+# * https://www.adafruit.com/product/2651
+# * https://www.bosch-sensortec.com/products/environmental-sensors/pressure-sensors/pressure-sensors-bmp280-1.html
+# * https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bmp280-ds001.pdf
+# * https://github.com/vitally/BMP280  
+# * https://github.com/micropython-IMU/micropython-bmp180
+
 import ssl
 
 from mqtt_as.mqtt_as import MQTTClient
@@ -1340,6 +1351,8 @@ from mqtt_as.mqtt_local import wifi_led, blue_led, config
 import uasyncio as asyncio
 from machine import UART
 from machine import Pin
+from machine import I2C
+import bmp280
 import time
 from config import *
 
@@ -1359,9 +1372,20 @@ led1 = Pin(12, Pin.OUT)
 
 debug_button = Pin(15, Pin.IN, Pin.PULL_UP)
 
+# Set up I2C (GPIO21=SDA, GPIO22=SCL)
+i2c = I2C(0, scl=Pin(2), sda=Pin(3), freq=100000)
+
+# Scan I2C bus to confirm connection
+print("I2C devices found:", i2c.scan())  # Should include [118] for 0x76
+
+# Initialize BMP280 (default address 0x76)
+sensor = bmp280.BMP280(i2c)
+
+# Optional: set oversampling for better accuracy
+# sensor.use_case(bmp280.CASE_WEATHER)
 
 
-def send_message(source, destination, message_type, sensor_id=None, status=None, temp_data_integer=None, temp_data_fraction=None, fan_id=None, fan_speed_data=None, fan_speed_set=None):
+def send_message(source, destination, message_type, sensor_id=None, status=None, temp_data=None, fan_id=None, fan_speed_data=None, fan_speed_set=None):
     """
     Sends a message with the specified structure.
     """
@@ -1381,16 +1405,12 @@ def send_message(source, destination, message_type, sensor_id=None, status=None,
     message[4] = message_type  # message_type
 
     if message_type == 16:  # Temp Data (0x10 in decimal)
-        if not (0 <= temp_data_integer <= 255):
+        if not (-40 <= temp_data <= 155):
             print("ESP: Temperature data out of range (-40 to 155)")
-            return
-        if not (0 <= temp_data_fraction <= 99):
-            print("ESP: Temperature data fraction out of range (0 to 99)")
             return
         message[5] = sensor_id  # sensor_id
         message[6] = status  # status
-        message[7] = temp_data_integer  # temp_data_integer
-        message[8] = temp_data_fraction  # temp_data_fraction
+        message[7] = int(temp_data)  # temp_data as a single value
 
     elif message_type == 32:  # Fan Control (0x20 in decimal)
         if not (1 <= fan_id <= 255):
@@ -1420,7 +1440,6 @@ def send_message(source, destination, message_type, sensor_id=None, status=None,
 
     print(f"ESP: Sending message: {message}")
     uart.write(message)
-
 
 
 def handle_message(message):
@@ -1479,7 +1498,6 @@ def handle_message(message):
         print("ESP: Unsupported message type or invalid destination")
 
 
-
 def process_message_by_type(message_type, message):
     """
     Processes a message based on its type.
@@ -1487,21 +1505,14 @@ def process_message_by_type(message_type, message):
     if message_type == 16:  # Temp Data (0x10 in decimal)
         sensor_id = message[5]
         status = message[6]
-        temp_data_integer = message[7]
-        temp_data_fraction = message[8]
+        temp_data = message[7]
 
-        # Adjust the temperature range to -40 to 155
-        adjusted_temp_data_integer = temp_data_integer - 40
-
-        if not (-40 <= adjusted_temp_data_integer <= 155):
+        if not (-40 <= temp_data <= 155):
             print("ESP: Received temperature data out of range (-40 to 155)")
-            return
-        if not (0 <= temp_data_fraction <= 99):
-            print("ESP: Received temperature data fraction out of range (0 to 99)")
             return
 
         print(f"ESP: Handling Temp Data message")
-        print(f"Sensor ID: {sensor_id}, Status: {status}, Temperature: {adjusted_temp_data_integer}.{temp_data_fraction}")
+        print(f"Sensor ID: {sensor_id}, Status: {status}, Temperature: {temp_data} °C")
 
     elif message_type == 32:  # Fan Control
         fan_id = message[5]
@@ -1527,7 +1538,6 @@ def process_message_by_type(message_type, message):
 
     else:
         print("ESP: Unsupported message type")
-
 
 
 async def process_rx():
@@ -1582,7 +1592,6 @@ async def process_rx():
         await asyncio.sleep_ms(10)
 
 
-
 async def check_debug_button():
     """
     Checks the state of the debug button and sends a message to the MQTT server if pressed.
@@ -1610,7 +1619,6 @@ async def check_debug_button():
         await asyncio.sleep_ms(50)  # Check the button state every 50ms
 
 
-
 async def receiver():
     b = b''
     sreader = asyncio.StreamReader(uart)
@@ -1629,7 +1637,8 @@ async def receiver():
 # Subscription callback
 def sub_cb(topic, msg, retained):
     """
-    Handles incoming MQTT messages and blinks an LED based on the message content.
+    Handles incoming MQTT messages and sends a fan control message to Dan (\x03)
+    based on the message content (0, 1, 2, or 3).
     """
     print(f'Topic: "{topic.decode()}" Message: "{msg.decode()}" Retained: {retained}')
 
@@ -1637,15 +1646,19 @@ def sub_cb(topic, msg, retained):
     try:
         value = int(msg.decode())
         if value in [0, 1, 2, 3]:
-            # Blink the LED based on the received value
-            for _ in range(value):
-                led1.value(0)  # Turn LED ON
-                time.sleep(0.2)  # Wait 200ms
-                led1.value(1)  # Turn LED OFF
-                time.sleep(0.2)  # Wait 200ms
-            print(f"Blinked LED {value} times")
+            # Send a fan control message to Dan (\x03)
+            send_message(
+                source=my_id,               # This device's ID
+                destination=b'\x03',        # Dan's ID
+                message_type=32,            # Fan Control message type
+                fan_id=1,                   # Example fan ID
+                status=1,                   # Example status (e.g., ON)
+                fan_speed_data=value,       # Fan speed data (same as value)
+                fan_speed_set=value         # Fan speed set (same as value)
+            )
+            print(f"Sent fan control message to Dan with fan_speed_set: {value}")
         else:
-            print("Message is not a valid blink value (0-3)")
+            print("Message is not a valid fan speed value (0-3)")
     except ValueError:
         print("Message is not a valid integer")
 
@@ -1661,6 +1674,66 @@ async def wifi_han(state):
 # If you connect with clean_session True, must re-subscribe (MQTT spec 3.1.2.4)
 async def conn_han(client):
     await client.subscribe(TOPIC_SUB, 1)
+
+async def read_temperature_and_publish():
+    """
+    Reads temperature data from the BMP280 sensor, publishes it to the MQTT server,
+    broadcasts it to all devices, and sends a fan control message to Dan based on the temperature.
+    Ensures the fan control message is sent only once when crossing the threshold.
+    """
+    last_fan_speed = None  # State variable to track the last sent fan speed
+
+    while True:
+        # Read temperature from the sensor
+        temp_data = sensor.temperature
+
+        # Ensure the temperature data is within valid ranges
+        if not (-40 <= temp_data <= 155):
+            print("ESP: Temperature data out of range (-40 to 155)")
+            await asyncio.sleep(2)
+            continue
+
+        # Print the temperature data
+        print(f"Temperature: {temp_data:.2f} °C")
+
+        # Publish the temperature data to the MQTT server
+        temp_payload = f"{temp_data:.2f}"
+        await client.publish(TOPIC_PUB, temp_payload, qos=1)
+        print(f"Published temperature data to MQTT: {temp_payload}")
+
+        # Send the temperature data as a broadcast message
+        send_message(
+            source=my_id,               # This device's ID
+            destination=broadcast,      # Broadcast ID
+            message_type=16,            # Temp Data message type
+            sensor_id=1,                # Example sensor ID
+            status=1,                   # Example status (e.g., valid data)
+            temp_data=temp_data         # Single temperature value
+        )
+        print(f"Broadcasted temperature data: {temp_data:.2f} °C")
+
+        # Determine the fan speed based on the temperature
+        if temp_data >= 34:
+            fan_speed = 3  # High speed
+        else:
+            fan_speed = 2  # Medium speed
+
+        # Send the fan control message only if the fan speed has changed
+        if fan_speed != last_fan_speed:
+            send_message(
+                source=my_id,               # This device's ID
+                destination=b'\x03',        # Dan's ID
+                message_type=32,            # Fan Control message type
+                fan_id=1,                   # Example fan ID
+                status=1,                   # Example status (e.g., ON)
+                fan_speed_data=fan_speed,   # Fan speed data
+                fan_speed_set=fan_speed     # Fan speed set
+            )
+            print(f"Sent fan control message to Dan with fan_speed_set: {fan_speed}")
+            last_fan_speed = fan_speed  # Update the state variable
+
+        # Wait before reading the temperature again
+        await asyncio.sleep(2)
 
 async def main(client):
     try:
@@ -1724,6 +1797,7 @@ client = MQTTClient(config)
 asyncio.create_task(process_rx())
 asyncio.create_task(check_debug_button())
 asyncio.create_task(heartbeat())
+asyncio.create_task(read_temperature_and_publish())
 try:
     asyncio.run(main(client))
 finally:
@@ -1734,7 +1808,8 @@ finally:
 </details>
 
 <ul>
-<li><a href="esp32_mqtt.zip">ESP Code</a></li>
+<li><a href="esp32_mqtt.zip">ESP Code Rev1</a></li>
+<li><a href="esp32_mqtt_Rev2.zip">ESP Code Rev2</a></li>
 </ul>
 
 
