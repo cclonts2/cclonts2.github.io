@@ -292,6 +292,8 @@ The Fan Control table defines the structure of messages for controlling fan spee
 </body>
 </html>
 
+### Code
+
 <details>
     <summary>ESP32 Code</summary>
         <pre><code>
@@ -770,6 +772,6 @@ finally:
 </details>
 
 - [ESP Code Rev1](esp32_mqtt.zip)
-- [ESP Code Rev2](esp32_mqtt_Rev2.zip)
+- [ESP Code Rev2](esp32_mqtt_Rev2.zip) 4/22/25
 
 
