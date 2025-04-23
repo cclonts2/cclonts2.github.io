@@ -1401,6 +1401,8 @@ sensor = bmp280.BMP280(i2c)
 # Optional: set oversampling for better accuracy
 # sensor.use_case(bmp280.CASE_WEATHER)
 
+# Initialize LED on pin 14
+led2 = Pin(14, Pin.OUT)
 
 def send_message(source, destination, message_type, sensor_id=None, status=None, temp_data=None, fan_id=None, fan_speed_data=None, fan_speed_set=None):
     """
@@ -1490,6 +1492,12 @@ def handle_message(message):
     # Process messages intended for this device
     if destination_id == my_id[0]:
         print("ESP: Message is for me")
+
+        # Blink LED on pin 14
+        led2.value(1)  # Turn on LED
+        time.sleep(0.1)  # Short delay
+        led2.value(0)  # Turn off LED
+
         # Handle specific message types (e.g., Temp Data, Fan Control)
         process_message_by_type(message_type, message)
 
@@ -1515,7 +1523,7 @@ def handle_message(message):
         print("ESP: Unsupported message type or invalid destination")
 
 
-def process_message_by_type(message_type, message):
+async def process_message_by_type(message_type, message):
     """
     Processes a message based on its type.
     """
@@ -1552,6 +1560,12 @@ def process_message_by_type(message_type, message):
 
         print(f"ESP: Handling Fan Control message")
         print(f"Fan ID: {fan_id}, Status: {status}, Fan Speed Data: {fan_speed_data}, Fan Speed Set: {fan_speed_set}")
+
+        # Publish the fan_speed_data to a separate MQTT topic
+        fan_speed_topic = "fan/speed"
+        fan_speed_payload = str(fan_speed_data)
+        await client.publish(fan_speed_topic, fan_speed_payload, qos=1)
+        print(f"Published fan speed data to MQTT topic '{fan_speed_topic}': {fan_speed_payload}")
 
     else:
         print("ESP: Unsupported message type")
@@ -1827,6 +1841,7 @@ finally:
 <ul>
 <li><a href="esp32_mqtt.zip">ESP Code Rev1</a></li>
 <li><a href="esp32_mqtt_Rev2.zip">ESP Code Rev2</a> 4/22/25</li>
+<li><a href="esp32_mqtt_Rev2.1.zip">ESP Code Rev2.1</a> 4/22/25</li>
 </ul>
 
 
