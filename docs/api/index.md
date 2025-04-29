@@ -798,3 +798,4 @@ finally:
 - [ESP Code Rev1](esp32_mqtt.zip)
 - [ESP Code Rev2](esp32_mqtt_Rev2.zip) 4/22/25
 - [ESP Code Rev2.1](esp32_mqtt_Rev2.1.zip) 4/22/25
+- [ESP Code Rev2.2](esp32_mqtt_Rev2.2.zip) 4/29/25
