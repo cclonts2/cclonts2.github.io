@@ -296,6 +296,7 @@ The Fan Control table defines the structure of messages for controlling fan spee
 
 
 ### Functionality
+
 - Can recieve temperature data and fan speed set messages and display them on a web server.
 - Can take inputs of 0, 1, 2 or 3 from a web server and send it as a set fan speed message to the fan system.
 - When receiving a message with it's own destination id will blink an LED
