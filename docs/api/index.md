@@ -294,7 +294,8 @@ The Fan Control table defines the structure of messages for controlling fan spee
 
 ## Code
 
-Functionality
+
+### Functionality
 - Can recieve temperature data and fan speed set messages and display them on a web server.
 - Can take inputs of 0, 1, 2 or 3 from a web server and send it as a set fan speed message to the fan system.
 - When receiving a message with it's own destination id will blink an LED
@@ -303,6 +304,7 @@ Functionality
 - Pass messages where the destination id is not it's own.
 - Ignore messages that source id is it's own.
 - Ignore messages that are not within preset id's for source and destinations, do not begin with AZ and end with YB
+
 
 <details>
     <summary>ESP32 Code</summary>
