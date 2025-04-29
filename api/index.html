@@ -1374,8 +1374,6 @@ import time
 from config import *
 
 MAX_MESSAGE_LEN = 64
-MAX_SEND_RATE = 5
-MAXTX = 5
 
 # Define team IDs and broadcast ID
 team = [b'\x01', b'\x02', b'\x03']  # Cade, Jahmel, Dan
@@ -1383,7 +1381,7 @@ my_id = b'\x01'  # Set this device's ID (e.g., Cade)
 broadcast = b'\x58'  # Broadcast ID
 
 uart = UART(2, 9600,tx=21,rx=14)
-uart.init(9600, bits=8, parity=None, stop=1,flow=0) # init with given parameters
+uart.init(9600, bits=8, parity=None, stop=1, flow=0) # init with given parameters
 
 led1 = Pin(12, Pin.OUT)
 
@@ -1397,9 +1395,6 @@ print("I2C devices found:", i2c.scan())  # Should include [118] for 0x76
 
 # Initialize BMP280 (default address 0x76)
 sensor = bmp280.BMP280(i2c)
-
-# Optional: set oversampling for better accuracy
-# sensor.use_case(bmp280.CASE_WEATHER)
 
 # Initialize LED on pin 14
 led2 = Pin(14, Pin.OUT)
@@ -1499,14 +1494,14 @@ def handle_message(message):
         led2.value(0)  # Turn off LED
 
         # Handle specific message types (e.g., Temp Data, Fan Control)
-        process_message_by_type(message_type, message)
+        asyncio.create_task(process_message_by_type(message_type, message))  # Use asyncio to ensure it's awaited
 
     # Process broadcast messages
     elif destination_id == broadcast[0]:
         if source_id != my_id[0]:
             print("ESP: Handling broadcast message from another device")
             # Handle specific message types (e.g., Temp Data, Fan Control)
-            process_message_by_type(message_type, message)
+            asyncio.create_task(process_message_by_type(message_type, message))
 
             # Pass the message along
             print("ESP: Passing along broadcast message")
@@ -1564,7 +1559,7 @@ async def process_message_by_type(message_type, message):
         # Publish the fan_speed_data to a separate MQTT topic
         fan_speed_topic = "fan/speed"
         fan_speed_payload = str(fan_speed_data)
-        await client.publish(fan_speed_topic, fan_speed_payload, qos=1)
+        await client.publish(TOPIC_FAN, fan_speed_payload, qos=1)
         print(f"Published fan speed data to MQTT topic '{fan_speed_topic}': {fan_speed_payload}")
 
     else:
@@ -1588,6 +1583,9 @@ async def process_rx():
         if c is not None:
             stream += c
 
+            # Debugging: Print current stream length and content
+            # print(f"ESP: Current stream length: {len(stream)}")
+
             # Check for message start
             if stream[-2:] == b'AZ' and not receiving_message:
                 # Start a new message
@@ -1604,23 +1602,30 @@ async def process_rx():
                 # Validate message length
                 if len(message) != MAX_MESSAGE_LEN:
                     print(f"ESP: Invalid message length ({len(message)}), ignoring")
-                    # Wait for the next valid prefix
-                    receiving_message = False
-                    stream = b''
+                    stream = b''  # Reset the stream
                     continue
 
-                # Handle the received message
-                handle_message(message)
+                # Handle the received message in a separate task
+                asyncio.create_task(handle_message_async(message))
                 led1.value(led1.value() ^ 1)  # Toggle LED
                 continue
 
             # Abort if message exceeds buffer size
             elif receiving_message and len(stream) > MAX_MESSAGE_LEN:
-                print("ESP: Message too long, aborting")
+                print(f"ESP: Message too long, aborting. Current stream: {stream}")
                 receiving_message = False
                 stream = b''  # Clear the stream and wait for the next prefix
 
-        await asyncio.sleep_ms(10)
+        # Yield control back to the event loop
+        await asyncio.sleep(0.01)  # Ensure frequent execution
+
+
+async def handle_message_async(message):
+    """
+    Handles an incoming message asynchronously.
+    """
+    handle_message(message)  # Call the existing synchronous handler
+    await asyncio.sleep(0)  # Yield control back to the event loop
 
 
 async def check_debug_button():
@@ -1629,41 +1634,21 @@ async def check_debug_button():
     """
     while True:
         if debug_button.value() == 0:  # Button is pressed (active low)
-            # Turn on LED1 to indicate the button is pressed
             led1.value(0)
-
-            # Example message to publish
-            debug_message = "Debug button pressed"
+            debug_message = "AZ\x01\x58\x01\x58\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00YB"
             print(f"ESP: Debug button pressed, sending message: {debug_message}")
 
-            # Publish the message to the MQTT server
-            await client.publish(TOPIC_PUB, debug_message, qos=1)
+            uart.write(debug_message)  # Send the message over UART
 
-            # Wait for the button to be released to avoid multiple triggers
+            # Publish the message in a separate task
+            asyncio.create_task(client.publish(TOPIC_PUB, debug_message, qos=1))
+
             while debug_button.value() == 0:
                 await asyncio.sleep_ms(50)
-
         else:
-            # Turn off LED1 when the button is not pressed
             led1.value(1)
 
-        await asyncio.sleep_ms(50)  # Check the button state every 50ms
-
-
-async def receiver():
-    b = b''
-    sreader = asyncio.StreamReader(uart)
-    while True:
-        res = await sreader.read(1)
-        if res==b';':
-            b+=res
-            await client.publish(TOPIC_PUB, b, qos=1)
-
-            print('published', b)
-            b = b''
-        else:
-            b+=res
-
+        await asyncio.sleep_ms(50)
 
 # Subscription callback
 def sub_cb(topic, msg, retained):
@@ -1707,64 +1692,64 @@ async def conn_han(client):
     await client.subscribe(TOPIC_SUB, 1)
 
 async def read_temperature_and_publish():
-    """
-    Reads temperature data from the BMP280 sensor, publishes it to the MQTT server,
-    broadcasts it to all devices, and sends a fan control message to Dan based on the temperature.
-    Ensures the fan control message is sent only once when crossing the threshold.
-    """
     last_fan_speed = None  # State variable to track the last sent fan speed
 
     while True:
-        # Read temperature from the sensor
-        temp_data = sensor.temperature
+        try:
+            # Read temperature from the sensor
+            temp_data = sensor.temperature
+            await asyncio.sleep(0)  # Yield control back to the event loop
 
-        # Ensure the temperature data is within valid ranges
-        if not (-40 <= temp_data <= 155):
-            print("ESP: Temperature data out of range (-40 to 155)")
-            await asyncio.sleep(2)
-            continue
+            # Ensure the temperature data is within valid ranges
+            if not (-40 <= temp_data <= 155):
+                print("ESP: Temperature data out of range (-40 to 155)")
+                await asyncio.sleep(2)
+                continue
 
-        # Print the temperature data
-        print(f"Temperature: {temp_data:.2f} °C")
+            # Print the temperature data
+            print(f"Temperature: {temp_data:.2f} °C")
 
-        # Publish the temperature data to the MQTT server
-        temp_payload = f"{temp_data:.2f}"
-        await client.publish(TOPIC_PUB, temp_payload, qos=1)
-        print(f"Published temperature data to MQTT: {temp_payload}")
+            # Publish the temperature data to the MQTT server
+            temp_payload = f"{temp_data:.2f}"
+            await client.publish(TOPIC_PUB, temp_payload, qos=1)
+            print(f"Published temperature data to MQTT: {temp_payload}")
 
-        # Send the temperature data as a broadcast message
-        send_message(
-            source=my_id,               # This device's ID
-            destination=broadcast,      # Broadcast ID
-            message_type=16,            # Temp Data message type
-            sensor_id=1,                # Example sensor ID
-            status=1,                   # Example status (e.g., valid data)
-            temp_data=temp_data         # Single temperature value
-        )
-        print(f"Broadcasted temperature data: {temp_data:.2f} °C")
-
-        # Determine the fan speed based on the temperature
-        if temp_data >= 34:
-            fan_speed = 3  # High speed
-        else:
-            fan_speed = 2  # Medium speed
-
-        # Send the fan control message only if the fan speed has changed
-        if fan_speed != last_fan_speed:
+            # Send the temperature data as a broadcast message
             send_message(
                 source=my_id,               # This device's ID
-                destination=b'\x03',        # Dan's ID
-                message_type=32,            # Fan Control message type
-                fan_id=1,                   # Example fan ID
-                status=1,                   # Example status (e.g., ON)
-                fan_speed_data=fan_speed,   # Fan speed data
-                fan_speed_set=fan_speed     # Fan speed set
+                destination=broadcast,      # Broadcast ID
+                message_type=16,            # Temp Data message type
+                sensor_id=1,                # Example sensor ID
+                status=1,                   # Example status (e.g., valid data)
+                temp_data=temp_data         # Single temperature value
             )
-            print(f"Sent fan control message to Dan with fan_speed_set: {fan_speed}")
-            last_fan_speed = fan_speed  # Update the state variable
+            print(f"Broadcasted temperature data: {temp_data:.2f} °C")
+
+            # Determine the fan speed based on the temperature
+            if temp_data >= 34:
+                fan_speed = 3  # High speed
+            else:
+                fan_speed = 2  # Medium speed
+
+            # Send the fan control message only if the fan speed has changed
+            if fan_speed != last_fan_speed:
+                send_message(
+                    source=my_id,               # This device's ID
+                    destination=b'\x03',        # Dan's ID
+                    message_type=32,            # Fan Control message type
+                    fan_id=1,                   # Example fan ID
+                    status=1,                   # Example status (e.g., ON)
+                    fan_speed_data=fan_speed,   # Fan speed data
+                    fan_speed_set=fan_speed     # Fan speed set
+                )
+                print(f"Sent fan control message to Dan with fan_speed_set: {fan_speed}")
+                last_fan_speed = fan_speed  # Update the state variable
+
+        except Exception as e:
+            print(f"Error reading temperature: {e}")
 
         # Wait before reading the temperature again
-        await asyncio.sleep(2)
+        await asyncio.sleep(5)
 
 async def main(client):
     try:
@@ -1772,8 +1757,9 @@ async def main(client):
     except OSError:
         print('Connection failed.')
         return
-    asyncio.create_task(receiver())
+    # asyncio.create_task(receiver())
 
+# Heartbeat function
     n = 0
     while True:
         await asyncio.sleep(5)
@@ -1789,6 +1775,7 @@ async def heartbeat():
         await asyncio.sleep_ms(500)
         blue_led(s)
         s = not s
+        await asyncio.sleep(0)
 
 # Define configuration
 config['server'] = MQTT_SERVER
@@ -1825,15 +1812,17 @@ config["password"] = MQTT_PASSWORD
 MQTTClient.DEBUG = True  # Optional
 client = MQTTClient(config)
 
-asyncio.create_task(process_rx())
-asyncio.create_task(check_debug_button())
-asyncio.create_task(heartbeat())
+asyncio.create_task(process_rx()),
+asyncio.create_task(check_debug_button()),
+asyncio.create_task(heartbeat()),
 asyncio.create_task(read_temperature_and_publish())
+
 try:
     asyncio.run(main(client))
 finally:
     client.close()  # Prevent LmacRxBlk:1 errors
     asyncio.new_event_loop()
+
 
 </code></pre>
 </details>
