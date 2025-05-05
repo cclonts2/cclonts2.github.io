@@ -2,7 +2,7 @@
 title: Block Diagram
 ---
 
-## Block Diagram
+# Block Diagram
 
 The system is centered around the **ESP32-S3-WROOM-1-N4 microcontroller**, which handles **Wi-Fi connectivity** for sending data to an **MQTT server** and **UART communication** for interfacing with external devices.
 
@@ -12,4 +12,4 @@ UART communication is facilitated through **UART RX** (receiving data from downs
 
 ---
 
-![](Block-Diagram-V1-2.png)
+![](Block-Diagram-V1-3.png)
