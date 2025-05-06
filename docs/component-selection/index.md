@@ -25,7 +25,7 @@ To create this section a structured decision-making process was followed guided 
 | LM1086 Datasheet URL                          | [Datasheet](https://services.taiwansemi.com/storage/resources/datasheet/TS1117B_I2405.pdf) |
 
 
-<img src="mp280-3.3.jpg" width="150">
+<img src="bmp280-3.3.jpg" width="150">
 
 | **BMP280-3.3**          | **Link**   |
 |---------------------------------|------------|
