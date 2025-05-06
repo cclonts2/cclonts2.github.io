@@ -75,9 +75,8 @@ The power budget was developed by identifying all critical system components, sp
 
 To account for unexpected current surges or variation in power draw, a 25% safety margin was applied. This results in a final estimated current requirement of:
 
-Total Required Current = 900 mA × 1.25 = 1125 mA
+Total Required Current = 901.12 mA × 1.25 = 1126.4 mA
 
-Regulator Selection and Evaluation
 The selected regulator for the +3.3V rail is the AP62300TWU-7, a high-efficiency buck converter rated for up to 3000 mA output current. This regulator accepts a wide input voltage range (4.2V–18V), making it suitable for use with the chosen external 12V power supply.
 
 ![Power Budget](power-budget.png)
