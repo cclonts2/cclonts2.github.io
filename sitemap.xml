@@ -41,6 +41,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://cclonts2.github.io/resources/</loc>
+         <lastmod>2025-05-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://cclonts2.github.io/static/node_modules/mathjax/</loc>
          <lastmod>2025-05-06</lastmod>
          <changefreq>daily</changefreq>
