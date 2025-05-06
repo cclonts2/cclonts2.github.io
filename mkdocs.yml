@@ -94,8 +94,6 @@ nav:
       - Overview: component-selection/index.md
   - Board Design:
       - Overview: board-design/Index.md
-  - Datasheets:
-      - Overview: Datasheets/index.md
   - API:
       - Overview: api/index.md
   - Resources:
