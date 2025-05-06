@@ -16,11 +16,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://cclonts2.github.io/ESP32-Table/</loc>
-         <lastmod>2025-05-06</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://cclonts2.github.io/api/</loc>
          <lastmod>2025-05-06</lastmod>
          <changefreq>daily</changefreq>
