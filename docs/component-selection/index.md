@@ -19,20 +19,6 @@ title: Component Selection
 
 ---
 
-## **USB Connector**
-
-| **Solution**       | **Pros**    | **Cons**                          |
-| ------------------ | ----------- | --------------------------------- |
-| <img src="10118193-0001LF.jpg" width="150"><br> Option 1. <br> E10118193-0001LF<br>$0.41/each<br>[link to product](https://www.digikey.com/en/products/detail/amphenol-cs-fci/10118193-0001LF/2785388)  | Right Angle Mounting <br> Through hole and SMD Mounting <br> Shielded | Through hole and SMD complexity |
-| <img src="10118192-0002LF.jpg" width="150"><br> Option 2. <br> 10118192-0002LF <br> $0.38/each <br> [Link to product](https://www.digikey.com/en/products/detail/amphenol-cs-fci/10118192-0002LF/6817756) | Right Angle Mounting <br> Shielded | More expensive <br> 7 Week Lead Time |
-| <img src="MFG_USB3140-30-0170-1-C.jpg" width="150"><br> **Option 3.** <br> USB3140-30-0170-1-C <br> $0.77/each <br> [Link to product](https://www.digikey.com/en/products/detail/gct/USB3140-30-0170-1-C/9859645) | Wider operating temperature range <br> Shielded | SMD Mounting only <br> Vertical Mounting |
-
-**Choice:** Option 1: USB3140-30-0170-1-C.
-
-**Rationale:** The USB3140-30-0170-1-C is the optimal choice because it provides a balance of high current handling, robust shielding, and mounting flexibility. Its 10,000 mating cycles and wide operating temperature range ensure durability and reliability
-
----
-
 ## **Linear Voltage Regulator**
 
 | **Solution**       | **Pros**    | **Cons**                          |
@@ -58,13 +44,6 @@ The TS1117BCW33 RPG, a low-dropout (LDO) regulator, provides a clean and stable 
 
 
 # **Final Components**
-
-<img src="MFG_USB3140-30-0170-1-C.jpg" width="150">
-
-| **USB3140-30-0170-1-C**          | **Link**   |
-|---------------------------------|------------|
-| Product Page URL                              | [DigiKey](https://www.digikey.com/en/products/detail/gct/USB3131-30-0230-A/9859642) | Found on DigiKey.com |
-| USB Datasheet URL                          | [Datasheet](https://gct.co/files/specs/usb3131-spec.pdf) |
 
 
 <img src="ap62300twu-7.jpg" width="150">
