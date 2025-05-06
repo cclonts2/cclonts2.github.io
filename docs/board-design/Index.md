@@ -40,6 +40,28 @@ A 3.3V voltage regulator is also included to ensure a stable power supply for th
 ![PCB Case](board-case.JPG)
 
 
+# Team Boards
+
+## **Jahmel (HMI) Board**
+
+![Top](top-board-jahmel.jpg)
+
+![Bottom](bottom-board-jahmel.jpg)
+
+![Top](top-board-jahmel1.jpg)
+
+![Bottom](bottom-board-jahmel1.jpg)
+
+## **Dan (Actuator) Board
+
+![Top]()
+
+![Bottom]()
+
+![Top]()
+
+![Bottom]()
+
 ## __Bill of Materials__
 
 | Part Name/Description       | Manufacturer Part #     | Vendor Link                                                                 | Datasheet Link                                                                                     | Schematic Reference Designators |
@@ -73,24 +95,38 @@ A 3.3V voltage regulator is also included to ensure a stable power supply for th
 
 - [XLSX Files](bom.xlsx)
 
-# Team Boards
 
-## **Jahmel (HMI) Board**
+# **Function**
+The Wi-Fi board schematic is designed to handle wireless communication between the system and a remote server, satisfying the need for real-time monitoring and control. Using an ESP32 microcontroller with built-in Wi-Fi, the board sends and receives data such as temperature readings and fan speed changes, enabling remote system feedback and updates.
 
-![Top](top-board-jahmel.jpg)
+A USB connection allows for programming and debugging via PC, supporting development and maintenance needs. A debug LED and button provide visual feedback and manual input for testing connectivity, messages, or firmware behavior. Header pins offer expandability for future functionality without redesigning the board.
 
-![Bottom](bottom-board-jahmel.jpg)
+Overall, the schematic meets user needs for wireless communication, remote data access, and flexible development support.
 
-![Top](top-board-jahmel1.jpg)
 
-![Bottom](bottom-board-jahmel1.jpg)
+# **Design and Decision-Making Process**
+The design approach followed a modular architecture to allow each board to fulfill a distinct role while maintaining clear communication interfaces. Early in the development process, the functionality was broken down into specific subsystems: sensing (temperature board), actuation (fan board), communication (Wi-Fi board), and interface (HMI board). Each schematic was developed to meet the requirements of its role while ensuring interoperability through consistent voltage levels and UART protocols.
 
-## **Dan (Actuator) Board
+Component selection prioritized compatibility with the ESP32 platform. UART was chosen as the inter-board communication protocol due to its simplicity, reliability, and sufficient speed for the low-bandwidth messaging required by the application. The threshold-based fan control logic was hardcoded for 34°C to ensure deterministic behavior, minimizing latency and enabling quick fan response.
 
-![Top]()
+Pin assignments, including GPIOs for UART and control signals, were mapped carefully to avoid conflicts across boards. Considerations were also given to power supply design, ensuring regulated 3.3V operation for the ESP32 and sensor components, with isolation between logic and power paths where necessary.
 
-![Bottom]()
+Decisions regarding HMI functionality involved balancing user control against automation. A button interface was incorporated to allow users to manually influence fan behavior, while the display serves as a feedback tool for system state—enhancing usability and transparency.
 
-![Top]()
+The schematic thus reflects a set of deliberate decisions rooted in system architecture, reliability, and user-centric interaction—all driven by clearly defined product requirements and user needs.
 
-![Bottom]()
+
+
+# **Version 2.0 Hardware Improvements**
+
+Several enhancements can be made in a Version 2.0 hardware revision to improve usability, expandability, and overall system protection.
+
+First, GPIO 17 and 18 should be used for UART RX and TX, respectively. These pins offer better compatibility with standard serial communication tools and reduce conflicts with other onboard functions. Utilizing these GPIOs would streamline debugging and communication with external devices.
+
+Second, the inclusion of dedicated headers for 3.3V, 12V, and Ground would greatly improve power access for peripheral modules and simplify connections during testing or expansion. Clearly labeled power headers support modular development and ease system integration.
+
+To improve protection, a diode should be added after the 12V regulator to prevent damage from reverse polarity connections. This simple safeguard enhances the durability and safety of the board, especially during frequent handling or field deployment.
+
+Additionally, implementing a jumper on the USB power line would enable selective disconnection of USB power. This feature is useful when monitoring the ESP32’s behavior under different power configurations or when preventing back-powering issues in interconnected systems. It allows developers to isolate the power source and maintain safe operation across multiple boards.
+
+These changes are directly supported by the schematic and address several practical limitations observed during the current hardware’s use. Incorporating these improvements would lead to a more robust, flexible, and reliable design suitable for both development and production environments.
