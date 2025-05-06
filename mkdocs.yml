@@ -100,3 +100,5 @@ nav:
       - Overview: Datasheets/index.md
   - API:
       - Overview: api/index.md
+  - Resources:
+      - Overview: resources/index.html
