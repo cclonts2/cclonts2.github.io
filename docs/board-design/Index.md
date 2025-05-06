@@ -2,6 +2,8 @@
 title: Board Design
 ---
 
+# Board Design
+
 __The schematic below details the bidirectional communication system, ensuring reliable data transmission between components. This design incorporates several key sections, each serving a critical function in facilitating seamless communication.__
 
 To support debugging and monitoring, the schematic includes three dedicated debug LEDs, providing visual indicators for data transmission and system status. Test points are strategically placed to allow for easy signal probing and troubleshooting. Additionally, reset and boot switches are integrated to enable system resets and firmware updates as needed.
