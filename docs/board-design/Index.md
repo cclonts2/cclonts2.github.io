@@ -40,9 +40,9 @@ A 3.3V voltage regulator is also included to ensure a stable power supply for th
 ![PCB Case](board-case.JPG)
 
 
-# Team Boards
+# **Team Member Boards**
 
-## **Jahmel (HMI) Board**
+## Jahmel (HMI) Board
 
 ![Top](top-board-jahmel.jpg)
 
@@ -52,7 +52,7 @@ A 3.3V voltage regulator is also included to ensure a stable power supply for th
 
 ![Bottom](bottom-board-jahmel1.jpg)
 
-## **Dan (Actuator) Board
+## Dan (Actuator) Board
 
 ![Top]()
 
@@ -93,7 +93,7 @@ A 3.3V voltage regulator is also included to ensure a stable power supply for th
 | Fuse 2A                     |                         | [Digikey](https://www.digikey.com/en/products/detail/optifuse/TCC-2A/12090267) | [Datasheet](https://www.optifuse.com/optifuse_ecommerce_tools/datasheets/TCC.pdf)                  | F1                              |
 | Header pins 18              |                         |                                                                             |                                                                                                    | J8,J9                           |
 
-- [XLSX Files](bom.xlsx)
+- [BOM XLSX Files](bom.xlsx)
 
 
 # **Function**
