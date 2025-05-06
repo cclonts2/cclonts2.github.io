@@ -21,16 +21,14 @@ A 3.3V voltage regulator is also included to ensure a stable power supply for th
 ## __PCB Design__
 - [PCB PDF](PCB-design.pdf)
 
-### __Top Layer__
+![Board Model](board-model.png)
+
 ![PCB Top Design](top-layer.png)
 
-### __Bottom Layer__
 ![PCB Bottom Design](bottom-layer.png)
 
-### __PCB Top Layer__
 ![PCB Top](pcb-board-front.jpg)
 
-### __PCB Bottom Layer__
 ![PCB Bottom](pcb-board-bottom.png)
 
 ## __Bill of Materials__
