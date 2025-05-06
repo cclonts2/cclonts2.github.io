@@ -23,9 +23,9 @@ A 3.3V voltage regulator is also included to ensure a stable power supply for th
 
 ![Board Model](board-model.png)
 
-![PCB Top Design](top-layer.png)
+![PCB Top Design](top-layer.png) ![PCB Top Design](top-layer1.JPG)
 
-![PCB Bottom Design](bottom-layer.png)
+![PCB Bottom Design](bottom-layer.png) ![PCB Bottom Design](bottom-layer1.JPG)
 
 ![PCB Top](pcb-board-front.jpg)
 
@@ -68,14 +68,20 @@ A 3.3V voltage regulator is also included to ensure a stable power supply for th
 
 ## **Jahmel (HMI) Board**
 
-![Top](top-board-jahmel.JPG)
-![Bottom](bottom-board-jahmel.JPG)
-![Top](top-board-jahmel1.JPG)
-![Bottom](bottom-board-jahmel1.JPG)
+![Top](top-board-jahmel.jpg)
+
+![Bottom](bottom-board-jahmel.jpg)
+
+![Top](top-board-jahmel1.jpg)
+
+![Bottom](bottom-board-jahmel1.jpg)
 
 ## **Dan (Actuator) Board
 
 ![Top]()
+
 ![Bottom]()
+
 ![Top]()
+
 ![Bottom]()
