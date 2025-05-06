@@ -97,7 +97,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#component-selection" class="md-skip">
+        <a href="#final-components" class="md-skip">
           Skip to content
         </a>
       
@@ -716,22 +716,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#microcontroller" class="md-nav__link">
-    Microcontroller
+  <a href="#decision-making-process-component-justification" class="md-nav__link">
+    Decision-Making Process &amp; Component Justification
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#linear-voltage-regulator" class="md-nav__link">
-    Linear Voltage Regulator
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#temp-sensor" class="md-nav__link">
-    Temp Sensor
+  <a href="#power-budget" class="md-nav__link">
+    Power Budget
   </a>
   
 </li>
@@ -759,96 +752,9 @@
   
 
 
-<h1 id="component-selection">Component Selection</h1>
-<h2 id="microcontroller"><strong>Microcontroller</strong></h2>
-<table>
-<thead>
-<tr>
-<th><strong>Solution</strong></th>
-<th><strong>Pros</strong></th>
-<th><strong>Cons</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a class="glightbox" href="MFG_Attachment-2-ESP32-S3-WROOM-1.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="MFG_Attachment-2-ESP32-S3-WROOM-1.jpg" width="150"></a><br>Option 1.<br> <strong>ESP32-S3-WROOM-1-N4</strong> <br>$2.95/each<br><a href="https://www.digikey.com/en/products/detail/espressif-systems/ESP32-S3-WROOM-1-N4/16162639">link to product</a></td>
-<td>Versatile <br> Wifi and Bluetooth <br> Meets surface mount constraint of project</td>
-<td>No Dedicated SRAM</td>
-</tr>
-<tr>
-<td><a class="glightbox" href="MFG_Attachment-2-ESP32-S3-WROOM-1.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="MFG_Attachment-2-ESP32-S3-WROOM-1.jpg" width="150"></a><br> Option 2. <br> ESP32-S3-WROOM-1-N16R8 <br> $3.90/each <br> <a href="https://www.digikey.com/en/products/detail/espressif-systems/ESP32-S3-WROOM-1-N16R8/16162642">Link to product</a></td>
-<td>16MB of memory <br> Wifi and Bluetooth</td>
-<td>More expensive <br> Slow shipping speed</td>
-</tr>
-<tr>
-<td><a class="glightbox" href="MFG_ESP32-WROOM-32E-(4MB-HIGH-TEMP).jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="MFG_ESP32-WROOM-32E-(4MB-HIGH-TEMP).jpg" width="150"></a><br> Option 3. <br> ESP32-WROOM-32E-H4 <br> $2.68/each <br> <a href="https://www.digikey.com/en/products/detail/espressif-systems/ESP32-WROOM-32E-H4/12696413">Link to product</a></td>
-<td>Wider operating temperature range <br> Wifi and Bluetooth</td>
-<td>Low Inventory <br> Slow shipping speed</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Choice:</strong> Option 1: ESP32-S3-WROOM-1-N4.</p>
-<p><strong>Rationale:</strong> The ESP32-S3-WROOM-1-N4 is the optimal choice because it provides a balance of features, cost, and compatibility with the project requirements. Its integrated Wi-Fi and Bluetooth v5.0 capabilities, surface mount design, and sufficient memory make it ideal for bidirectional internet communication. While it has some limitations, such as limited RAM and a moderate operating temperature range, these are not critical for the project.</p>
-<hr />
-<h2 id="linear-voltage-regulator"><strong>Linear Voltage Regulator</strong></h2>
-<table>
-<thead>
-<tr>
-<th><strong>Solution</strong></th>
-<th><strong>Pros</strong></th>
-<th><strong>Cons</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a class="glightbox" href="DPak-TO-263-5-Leads.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="DPak-TO-263-5-Leads.jpg" width="150"></a><br>Option 1.<br> NCP5662DS33R4G <br>$1.32/each <br> <a href="https://www.digikey.com/en/products/detail/onsemi/NCP5662DS33R4G/1483762">link to product</a></td>
-<td>Over-Current Protection <br> Enable Pin</td>
-<td>Obsolete Status <br> Bulk Quantity Ordering</td>
-</tr>
-<tr>
-<td><a class="glightbox" href="296~4073225-4~PWP~20.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="296~4073225-4~PWP~20.jpg" width="150"></a><br> Option 2. <br> TPS75133QPWPR <br> $4.12/each <br> <a href="https://www.digikey.com/en/products/detail/texas-instruments/TPS75133QPWPR/1673042">Link to product</a></td>
-<td>Wide Temp Range <br> Advance Features (Reset Pin, etc.)</td>
-<td>Low Dropout Voltage <br> Input Voltage 5.5</td>
-</tr>
-<tr>
-<td><a class="glightbox" href="488~506AX-01~MN~6.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="488~506AX-01~MN~6.jpg" width="150"></a><br> Option 3. <br> NCP565MN33T2G <br> $0.89/each <br> <a href="https://www.digikey.com/en/products/detail/onsemi/NCP565MN33T2G/1792550">Link to product</a></td>
-<td>Compact Design <br> Wide Temperature Range</td>
-<td>Difficult SMD mounting <br> Obsolete Status</td>
-</tr>
-<tr>
-<td><a class="glightbox" href="ap62300twu-7.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="ap62300twu-7.jpg" width="150"></a><br> <strong>Option 4.</strong> <br> AP62300TWU-7 <br> $0.71/each <br> <a href="https://www.digikey.com/en/products/detail/diodes-incorporated/AP62300TWU-7/12702558">Link to product</a></td>
-<td>Larger Package Size <br> Wide Voltage Input Range (4.2V - 18V) <br> High Efficiency</td>
-<td>85°C Top Temperature</td>
-</tr>
-<tr>
-<td><a class="glightbox" href="ts1117bcw33rpg.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="ts1117bcw33rpg.jpg" width="150"></a><br> <strong>Option 5.</strong> <br> TS1117BCW33 RPG <br> $0.82/each <br> <a href="https://www.digikey.com/en/products/detail/taiwan-semiconductor-corporation/TS1117BCW33-RPG/7370078">Link to product</a></td>
-<td>Fixed 3.3V Output <br> Simple Design <br> Overcurrent &amp; Thermal Protection <br></td>
-<td>High Dropout Voltage <br> Lower Efficiency</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Choice:</strong> Option 4 &amp; 5: AP62300TWU-7; TS1117BCW33 RPG</p>
-<p><strong>Rationale:</strong> The combination of the <strong>AP62300TWU-7</strong> and <strong>TS1117BCW33 RPG</strong> provides a versatile power regulation solution. The AP62300TWU-7, a high-efficiency buck converter, efficiently steps down higher input voltages (4.2V - 18V) while delivering up to 3A output current, making it ideal for applications requiring higher power efficiency. However, its switching nature may introduce noise.</p>
-<p>The TS1117BCW33 RPG, a low-dropout (LDO) regulator, provides a clean and stable 3.3V output with built-in overcurrent and thermal protection, making it well-suited for noise-sensitive components and 5V PC Programming. Though less efficient than the buck converter, its simplicity and low dropout performance (for lower currents) make it a good secondary choice.</p>
-<hr />
-<h2 id="temp-sensor"><strong>Temp Sensor</strong></h2>
-<table>
-<thead>
-<tr>
-<th><strong>Solution</strong></th>
-<th><strong>Pros</strong></th>
-<th><strong>Cons</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a class="glightbox" href="bmp280-3.3.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="bmp280-3.3.jpg" width="150"></a><br>Option 1.<br> BMP280-3.3 <br>$1.48/each <br> <a href="hhttps://www.amazon.com/dp/B07VNDZ6N4?ref=ppx_yo2ov_dt_b_fed_asin_title&amp;th=1">link to product</a></td>
-<td>Premade <br> Pins for breadboarding <br> Accuracy <br> Multiple Features</td>
-<td>Amazon has no datasheet</td>
-</tr>
-</tbody>
-</table>
 <h1 id="final-components"><strong>Final Components</strong></h1>
+<h2 id="decision-making-process-component-justification">Decision-Making Process &amp; Component Justification</h2>
+<p>To create this section a structured decision-making process was followed guided by project constraints, performance requirements, cost, and availability. Evaluating each category of components (microcontroller, power regulation, and sensors) by comparing options based on key criteria like functionality, efficiency, ease of integration, and compatibility. Selected final components that not only satisfied technical specifications but also offered reliability and practicality for prototyping and manufacturing.</p>
 <p><a class="glightbox" href="ap62300twu-7.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="ap62300twu-7.jpg" width="150"></a></p>
 <table>
 <thead>
@@ -1043,6 +949,105 @@
 </table>
 <p><a class="glightbox" href="ESP32-Pin-Layout.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="ESP32-Pin-Layout.jpg" /></a>
 <a class="glightbox" href="ESP32-Pin-Diagram.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="ESP32-Pin-Diagram.jpg" /></a></p>
+<h2 id="power-budget"><strong>Power Budget</strong></h2>
+<p>The power budget was developed by identifying all critical system components, specifying their voltage requirements, and estimating their maximum current consumption. Each component on the +3.3V rail was analyzed for its contribution to total current demand.</p>
+<p>To account for unexpected current surges or variation in power draw, a 25% safety margin was applied. This results in a final estimated current requirement of:</p>
+<p>Total Required Current = 900 mA × 1.25 = 1125 mA</p>
+<p>Regulator Selection and Evaluation
+The selected regulator for the +3.3V rail is the AP62300TWU-7, a high-efficiency buck converter rated for up to 3000 mA output current. This regulator accepts a wide input voltage range (4.2V–18V), making it suitable for use with the chosen external 12V power supply.</p>
+<p><a class="glightbox" href="power-budget.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Power Budget" src="power-budget.png" /></a></p>
+<ul>
+<li><a href="power-budget.xlsx">XLSX Files</a></li>
+</ul>
+<h1 id="component-selection"><strong>Component Selection</strong></h1>
+<h2 id="microcontroller"><strong>Microcontroller</strong></h2>
+<table>
+<thead>
+<tr>
+<th><strong>Solution</strong></th>
+<th><strong>Pros</strong></th>
+<th><strong>Cons</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="glightbox" href="MFG_Attachment-2-ESP32-S3-WROOM-1.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="MFG_Attachment-2-ESP32-S3-WROOM-1.jpg" width="150"></a><br>Option 1.<br> <strong>ESP32-S3-WROOM-1-N4</strong> <br>$2.95/each<br><a href="https://www.digikey.com/en/products/detail/espressif-systems/ESP32-S3-WROOM-1-N4/16162639">link to product</a></td>
+<td>Versatile <br> Wifi and Bluetooth <br> Meets surface mount constraint of project</td>
+<td>No Dedicated SRAM</td>
+</tr>
+<tr>
+<td><a class="glightbox" href="MFG_Attachment-2-ESP32-S3-WROOM-1.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="MFG_Attachment-2-ESP32-S3-WROOM-1.jpg" width="150"></a><br> Option 2. <br> ESP32-S3-WROOM-1-N16R8 <br> $3.90/each <br> <a href="https://www.digikey.com/en/products/detail/espressif-systems/ESP32-S3-WROOM-1-N16R8/16162642">Link to product</a></td>
+<td>16MB of memory <br> Wifi and Bluetooth</td>
+<td>More expensive <br> Slow shipping speed</td>
+</tr>
+<tr>
+<td><a class="glightbox" href="MFG_ESP32-WROOM-32E-(4MB-HIGH-TEMP).jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="MFG_ESP32-WROOM-32E-(4MB-HIGH-TEMP).jpg" width="150"></a><br> Option 3. <br> ESP32-WROOM-32E-H4 <br> $2.68/each <br> <a href="https://www.digikey.com/en/products/detail/espressif-systems/ESP32-WROOM-32E-H4/12696413">Link to product</a></td>
+<td>Wider operating temperature range <br> Wifi and Bluetooth</td>
+<td>Low Inventory <br> Slow shipping speed</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Choice:</strong> Option 1: ESP32-S3-WROOM-1-N4.</p>
+<p><strong>Rationale:</strong> The ESP32-S3-WROOM-1-N4 is the optimal choice because it provides a balance of features, cost, and compatibility with the project requirements. Its integrated Wi-Fi and Bluetooth v5.0 capabilities, surface mount design, and sufficient memory make it ideal for bidirectional internet communication. While it has some limitations, such as limited RAM and a moderate operating temperature range, these are not critical for the project.</p>
+<hr />
+<h2 id="linear-voltage-regulator"><strong>Linear Voltage Regulator</strong></h2>
+<table>
+<thead>
+<tr>
+<th><strong>Solution</strong></th>
+<th><strong>Pros</strong></th>
+<th><strong>Cons</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="glightbox" href="DPak-TO-263-5-Leads.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="DPak-TO-263-5-Leads.jpg" width="150"></a><br>Option 1.<br> NCP5662DS33R4G <br>$1.32/each <br> <a href="https://www.digikey.com/en/products/detail/onsemi/NCP5662DS33R4G/1483762">link to product</a></td>
+<td>Over-Current Protection <br> Enable Pin</td>
+<td>Obsolete Status <br> Bulk Quantity Ordering</td>
+</tr>
+<tr>
+<td><a class="glightbox" href="296~4073225-4~PWP~20.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="296~4073225-4~PWP~20.jpg" width="150"></a><br> Option 2. <br> TPS75133QPWPR <br> $4.12/each <br> <a href="https://www.digikey.com/en/products/detail/texas-instruments/TPS75133QPWPR/1673042">Link to product</a></td>
+<td>Wide Temp Range <br> Advance Features (Reset Pin, etc.)</td>
+<td>Low Dropout Voltage <br> Input Voltage 5.5</td>
+</tr>
+<tr>
+<td><a class="glightbox" href="488~506AX-01~MN~6.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="488~506AX-01~MN~6.jpg" width="150"></a><br> Option 3. <br> NCP565MN33T2G <br> $0.89/each <br> <a href="https://www.digikey.com/en/products/detail/onsemi/NCP565MN33T2G/1792550">Link to product</a></td>
+<td>Compact Design <br> Wide Temperature Range</td>
+<td>Difficult SMD mounting <br> Obsolete Status</td>
+</tr>
+<tr>
+<td><a class="glightbox" href="ap62300twu-7.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="ap62300twu-7.jpg" width="150"></a><br> <strong>Option 4.</strong> <br> AP62300TWU-7 <br> $0.71/each <br> <a href="https://www.digikey.com/en/products/detail/diodes-incorporated/AP62300TWU-7/12702558">Link to product</a></td>
+<td>Larger Package Size <br> Wide Voltage Input Range (4.2V - 18V) <br> High Efficiency</td>
+<td>85°C Top Temperature</td>
+</tr>
+<tr>
+<td><a class="glightbox" href="ts1117bcw33rpg.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="ts1117bcw33rpg.jpg" width="150"></a><br> <strong>Option 5.</strong> <br> TS1117BCW33 RPG <br> $0.82/each <br> <a href="https://www.digikey.com/en/products/detail/taiwan-semiconductor-corporation/TS1117BCW33-RPG/7370078">Link to product</a></td>
+<td>Fixed 3.3V Output <br> Simple Design <br> Overcurrent &amp; Thermal Protection <br></td>
+<td>High Dropout Voltage <br> Lower Efficiency</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Choice:</strong> Option 4 &amp; 5: AP62300TWU-7; TS1117BCW33 RPG</p>
+<p><strong>Rationale:</strong> The combination of the <strong>AP62300TWU-7</strong> and <strong>TS1117BCW33 RPG</strong> provides a versatile power regulation solution. The AP62300TWU-7, a high-efficiency buck converter, efficiently steps down higher input voltages (4.2V - 18V) while delivering up to 3A output current, making it ideal for applications requiring higher power efficiency. However, its switching nature may introduce noise.</p>
+<p>The TS1117BCW33 RPG, a low-dropout (LDO) regulator, provides a clean and stable 3.3V output with built-in overcurrent and thermal protection, making it well-suited for noise-sensitive components and 5V PC Programming. Though less efficient than the buck converter, its simplicity and low dropout performance (for lower currents) make it a good secondary choice.</p>
+<hr />
+<h2 id="temp-sensor"><strong>Temp Sensor</strong></h2>
+<table>
+<thead>
+<tr>
+<th><strong>Solution</strong></th>
+<th><strong>Pros</strong></th>
+<th><strong>Cons</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="glightbox" href="bmp280-3.3.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="bmp280-3.3.jpg" width="150"></a><br>Option 1.<br> BMP280-3.3 <br>$1.48/each <br> <a href="hhttps://www.amazon.com/dp/B07VNDZ6N4?ref=ppx_yo2ov_dt_b_fed_asin_title&amp;th=1">link to product</a></td>
+<td>Premade <br> Pins for breadboarding <br> Accuracy <br> Multiple Features</td>
+<td>Amazon has no datasheet</td>
+</tr>
+</tbody>
+</table>
 
 
 
