@@ -59,14 +59,25 @@ A 3.3V voltage regulator is also included to ensure a stable power supply for th
 | Voltage Reg 12v-3v          | AP62300TWU-7            | [Digikey](https://www.digikey.com/en/products/detail/diodes-incorporated/AP62300TWU-7/12702558) | [Datasheet](https://www.diodes.com/assets/Datasheets/AP62300_AP62301_AP62300T.pdf)                  | VR1                             |
 | Fuse Holder                 | 4628                    | [Digikey](https://www.digikey.com/en/products/detail/keystone-electronics/4628/2137316) | [Datasheet](https://www.keyelco.com/userAssets/file/M65p44.pdf)                                    |                                 |
 | Power Supply                |                         | [Amazon](https://www.amazon.com/ALITOVE-Converter-Transformer-5-5x2-1mm-Computer/dp/B07G5BQGYD/ref=sr_1_2_sspa?crid=12GWNG2FSE33T&dib=eyJ2IjoiMSJ9.OLbEbDloV-q56WykFU0853_wTKjxA9ZBbTQuOeOHqRyEtCI4ndhnJt2m8yiThbDHpUnWOYyze1BxgQevKLM6ofpUUL5-UIci3w9b_ygdyokWzLOQJR72hrt8FZ3wzlJIzn-pj2YHfjp49F9R6xqK_bP41X1ibJhGENpZhnj9C_yJsragRwC9fKnOHxm_Om_vAYwOYB7_N91D9optw7_FsEkMyenL13CHNszK6DaYqhA.ZkKFshn5vsOkEN1d93uqGDuIV8DB_UpzoR2mgmptFN0&dib_tag=se&keywords=power%2Badapter%2B12v%2B8A%2B2.5%2Bx%2B5.5&qid=1742561264&sprefix=power%2Badapter%2B12v%2B8a%2B2.5%2Bx%2B5.5%2Caps%2C131&sr=8-2-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1) | [Datasheet](https://www.alitove.net/product/power-supply-adapter/12v-power-supply?product_id=68) |                                 |
+| Temperature Sensor          | HiLetgo                 | [Amazon](https://www.amazon.com/dp/B07VNDZ6N4?ref=ppx_yo2ov_dt_b_fed_asin_title&th=1) |  [Datasheet](https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bmp280-ds001.pdf)                       |                                 |
 | Ribbon Cable                |                         | [Amazon](https://www.amazon.com/gp/product/B07DFBPZLJ?smid=A64W1E1ZZHST0) |                                                                                                    |                                 |
 | Fuse 2A                     |                         | [Digikey](https://www.digikey.com/en/products/detail/optifuse/TCC-2A/12090267) | [Datasheet](https://www.optifuse.com/optifuse_ecommerce_tools/datasheets/TCC.pdf)                  | F1                              |
 | Header pins 18              |                         |                                                                             |                                                                                                    | J8,J9                           |
 
 - [XLSX Files](bom.xlsx)
 
-## __Power Budget__
+# Team Boards
 
-![Power Budget](power-budget.png)
+## **Jahmel (HMI) Board**
 
-- [XLSX Files](power-budget.xlsx)
+![Top](top-board-jahmel.JPG)
+![Bottom](bottom-board-jahmel.JPG)
+![Top](top-board-jahmel1.JPG)
+![Bottom](bottom-board-jahmel1.JPG)
+
+## **Dan (Actuator) Board
+
+![Top]()
+![Bottom]()
+![Top]()
+![Bottom]()
